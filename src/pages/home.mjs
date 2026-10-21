@@ -88,7 +88,7 @@ ${section({
       <p>After building a foundation that supported those combat-wounded veterans after 9/11, Sandy saw a broader challenge emerging: transition affects all servicemembers, whether injured in war or simply navigating the profound change that comes with leaving military life.</p>
       <p>She co-founded Freedom Ranch Veterans Foundation with two veterans to help meet that challenge and create a place where veterans can reconnect with purpose, community, and a clear vision for what comes next.</p>
       <p>Freedom Ranch is the next chapter in Sandy’s lifelong commitment to veterans and their families.</p>
-      <div class="actions">${btn('Read Sandy’s Story', '/about/founder', 'ink')}</div>
+      <div class="actions">${btn('Read Sandy’s Story', '/about/team#sandy', 'ink')}</div>
     </div>
   </div>
 </section>

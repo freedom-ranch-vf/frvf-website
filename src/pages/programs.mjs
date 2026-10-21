@@ -29,10 +29,21 @@ ${section({
     [
       { kicker: 'Pillar 01', title: 'The Retreat', text: 'A three-day immersive experience on ranch estates, away from the noise of everyday life, for small cohorts of veterans to rest, reflect, and reconnect with what matters most. Veterans meet their coach and fellow cohort members in person, building the foundation of trust that carries into the months ahead.', link: ['Retreat details', '/programs/veteran-retreats'] },
       { kicker: 'Pillar 02', title: 'The Coaching', text: 'Coaching begins on-site during the retreat, then continues virtually for six months afterward through our Thrive in Transition™ model. Guided by the Ideal Life Framework, this ongoing relationship turns reflection into a real plan, backed by structured accountability every step of the way.', link: ['About the coaching', '/programs/coaching'] },
-      { kicker: 'Pillar 03', title: 'The Community', text: 'The peer relationships built on-site don’t end when the retreat does. Veterans stay connected to their cohort, coaches, and mentors well beyond the program, so the support that starts in person keeps going long after everyone heads home.', link: ['About the community', '/programs/community'] },
+      { kicker: 'Pillar 03', title: 'The Community', text: 'The peer relationships built on-site don’t end when the retreat does. Veterans stay connected to their cohort, coaches, and mentors well beyond the program, so the support that starts in person keeps going long after everyone heads home.', link: ['What happens after', '#community'] },
     ],
     'c3'
   ) + `<p style="margin-top:2rem;font-family:var(--serif);font-size:1.4rem;max-width:40rem">Together, these three pillars are designed to create lasting change, not just a memorable weekend.</p>`,
+})}
+${section({
+  id: 'community',
+  cls: 'sand',
+  narrow: true,
+  eyebrow: 'Alumni Community',
+  title: 'The relationships don’t end when the coaching does.',
+  body: prose(`
+<p>Once a veteran completes the retreat and the six months of coaching that follow, they become part of the Freedom Ranch alumni community, a growing network of veterans, coaches, and mentors who understand exactly what this transition takes because they’ve lived it too. This is where the bonds formed on-site keep growing: staying connected to your cohort, checking in with the coach who walked you through it, and meeting veterans from other retreats who are further down, or just starting, the same road.</p>
+<p class="pull">Transition doesn’t have a finish line. Neither does this community.</p>
+<p>Freedom Ranch alumni have a place to belong long after the retreat ends, because no veteran should have to keep rebuilding alone once the formal program is over.</p>`),
 })}
 ${ctaBand({ title: 'Four steps from application to alumni.', actions: btn('See How It Works', '/programs/how-it-works') })}`;
     },
@@ -115,27 +126,7 @@ ${section({
 <p>Every veteran who completes a Freedom Ranch retreat continues into six months of one-on-one coaching through our Thrive in Transition™ model. Sessions begin on-site during the retreat and continue virtually afterward, so the relationship built in person doesn’t reset once the veteran heads home. Guided by the Ideal Life Framework, coaching turns the clarity gained at the retreat into a concrete plan, backed by structured accountability along the way.</p>
 <p>Coaching isn’t one-size-fits-all. Each veteran’s plan is built around their own goals, whether that means career direction, financial mindset, family and relationships, or personal wellness. What stays consistent is the commitment: a dedicated coach who checks in, holds veterans accountable, and helps them keep moving forward, long after the noise of the retreat has faded.</p>`),
 })}
-${ctaBand({ title: 'Support that outlasts the retreat.', actions: btn('Learn About Our Community', '/programs/community') })}`;
-    },
-  },
-
-  {
-    path: '/programs/community',
-    title: 'Alumni Community',
-    desc: 'The relationships built at Freedom Ranch keep growing through an alumni community of veterans, coaches, and mentors.',
-    render() {
-      return `${pageHero({
-        eyebrow: 'Alumni Community',
-        title: 'The relationships don’t end when the coaching does.',
-      })}
-${section({
-  narrow: true,
-  body: prose(`
-<p>Once a veteran completes the retreat and the six months of coaching that follow, they become part of the Freedom Ranch alumni community, a growing network of veterans, coaches, and mentors who understand exactly what this transition takes because they’ve lived it too. This is where the bonds formed on-site keep growing: staying connected to your cohort, checking in with the coach who walked you through it, and meeting veterans from other retreats who are further down, or just starting, the same road.</p>
-<p class="pull">Transition doesn’t have a finish line. Neither does this community.</p>
-<p>Freedom Ranch alumni have a place to belong long after the retreat ends, because no veteran should have to keep rebuilding alone once the formal program is over.</p>`),
-})}
-${ctaBand({ title: 'Come meet the community.', actions: btn('See Upcoming Events', '/events') })}`;
+${ctaBand({ title: 'Support that outlasts the retreat.', actions: btn('Learn About Our Community', '/programs#community') })}`;
     },
   },
 

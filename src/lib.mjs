@@ -195,6 +195,22 @@ function header() {
 </header>`;
 }
 
+const icons = {
+  linkedin: '<path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3V9.75zm6.5 0h3.8v1.54h.05c.53-1 1.82-2.05 3.75-2.05 4 0 4.75 2.63 4.75 6.06V21h-4v-4.9c0-1.17-.02-2.67-1.63-2.67-1.63 0-1.88 1.27-1.88 2.59V21h-4V9.75z"/>',
+  facebook: '<path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.95c0-.9.25-1.5 1.55-1.5h1.65V3.65A22 22 0 0 0 14.3 3.5c-2.4 0-4 1.45-4 4.1v2.3H7.6V13h2.7v8h3.2z"/>',
+  instagram: '<path d="M7.5 3h9A4.5 4.5 0 0 1 21 7.5v9a4.5 4.5 0 0 1-4.5 4.5h-9A4.5 4.5 0 0 1 3 16.5v-9A4.5 4.5 0 0 1 7.5 3zm0 1.8A2.7 2.7 0 0 0 4.8 7.5v9a2.7 2.7 0 0 0 2.7 2.7h9a2.7 2.7 0 0 0 2.7-2.7v-9a2.7 2.7 0 0 0-2.7-2.7h-9zM12 7.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 1.8a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 0 0 0-5.4zm5-2.9a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1z"/>',
+  youtube: '<path d="M21.6 7.2a2.5 2.5 0 0 0-1.75-1.77C18.3 5 12 5 12 5s-6.3 0-7.85.43A2.5 2.5 0 0 0 2.4 7.2C2 8.76 2 12 2 12s0 3.24.4 4.8a2.5 2.5 0 0 0 1.75 1.77C5.7 19 12 19 12 19s6.3 0 7.85-.43a2.5 2.5 0 0 0 1.75-1.77C22 15.24 22 12 22 12s0-3.24-.4-4.8zM10 15V9l5.2 3L10 15z"/>',
+  x: '<path d="M17.75 3h3.1l-6.77 7.74L22 21h-6.25l-4.9-6.4L5.25 21h-3.1l7.24-8.28L2 3h6.4l4.42 5.85L17.75 3zm-1.1 16.15h1.72L7.4 4.76H5.55l11.1 14.39z"/>',
+  tiktok: '<path d="M16.6 3c.3 2.4 1.7 3.9 4 4.1v3.1c-1.4.1-2.7-.35-4-1.2v6.1c0 3.9-3.2 5.9-6.2 5.2-2.5-.6-4.1-3-3.5-5.6.6-2.6 3.1-4 5.6-3.5v3.2c-1.4-.4-2.7.4-2.9 1.6-.2 1.3.8 2.3 2 2.2 1-.1 1.6-.8 1.6-2V3h3.4z"/>',
+};
+const socialLabels = { linkedin: 'LinkedIn', facebook: 'Facebook', instagram: 'Instagram', youtube: 'YouTube', x: 'X', tiktok: 'TikTok' };
+// Only networks with a link in settings are shown, so there are never dead buttons.
+function socials() {
+  const items = Object.entries(socialLabels).filter(([k]) => site.social[k]);
+  if (!items.length) return '';
+  return `<ul class="socials" aria-label="Follow Freedom Ranch">${items.map(([k, l]) => `<li><a href="${esc(site.social[k])}" target="_blank" rel="noopener" aria-label="${l}"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">${icons[k]}</svg></a></li>`).join('')}</ul>`;
+}
+
 function footer() {
   const a = site.address;
   const col = (t, links) => `<div><h3>${t}</h3><ul>${links.map(([l, h]) => `<li><a href="${h}">${l}</a></li>`).join('')}</ul></div>`;
@@ -219,6 +235,7 @@ function footer() {
         </ul>
       </div>
     </div>
+    ${socials()}
     <div class="crisis"><strong>${site.crisisLine}</strong> (or ${site.crisisText}). Free and confidential, 24/7.</div>
     <p class="legal">&copy; 2026 Freedom Ranch Veterans Foundation. All rights reserved.</p>
   </div>

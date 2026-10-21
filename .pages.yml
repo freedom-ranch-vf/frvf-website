@@ -23,6 +23,16 @@ content:
       - { name: shaveClubUrl, label: Freedom Shave Club link, type: string }
       - { name: form990, label: Form 990 link (leave blank until published), type: string }
       - { name: spendingBreakdown, label: Program spending breakdown link, type: string }
+      - name: social
+        label: Social media links (leave blank to hide an icon)
+        type: object
+        fields:
+          - { name: linkedin, label: LinkedIn, type: string }
+          - { name: facebook, label: Facebook, type: string }
+          - { name: instagram, label: Instagram, type: string }
+          - { name: youtube, label: YouTube, type: string }
+          - { name: x, label: X (Twitter), type: string }
+          - { name: tiktok, label: TikTok, type: string }
       - name: videos
         label: Featured videos (paste a YouTube or Vimeo link)
         type: object

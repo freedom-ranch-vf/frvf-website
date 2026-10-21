@@ -309,3 +309,8 @@ button.video-thumb:hover .play { transform: scale(1.08); }
 
 /* ---------- print ---------- */
 @media print { .site-header, .site-footer, .cta-band, .menu-btn { display: none; } body { background: #fff; } }
+
+/* ---------- social icons ---------- */
+.socials { display: flex; gap: 0.9rem; list-style: none; padding: 0; margin: 1.6rem 0 0; }
+.socials a { display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid rgba(243, 234, 215, 0.35); border-radius: 50%; color: var(--sand); }
+.socials a:hover { background: var(--brass-l); color: var(--ink); border-color: var(--brass-l); text-decoration: none; }

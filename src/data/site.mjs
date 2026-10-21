@@ -18,6 +18,7 @@ export const site = {
   shaveClubUrl: cfg.shaveClubUrl,
   crisisLine: cfg.crisisLine,
   crisisText: cfg.crisisText,
+  social: cfg.social || {},
   // Forms use Netlify Forms by default. These optional env vars send them to a webhook instead.
   applyEndpoint: process.env.FRVF_APPLY_ENDPOINT || '',
   contactEndpoint: process.env.FRVF_CONTACT_ENDPOINT || '',
@@ -40,13 +41,8 @@ export const nav = [
     label: 'About', href: '/about',
     sub: [
       ['About Freedom Ranch', '/about'],
-      ['Our Mission', '/about/our-mission'],
-      ['Our Story', '/about/our-story'],
-      ['Co-Founder', '/about/founder'],
-      ['Leadership', '/about/leadership'],
-      ['Board of Directors', '/about/board-of-directors'],
+      ['Our Team', '/about/team'],
       ['Financial Transparency', '/about/financial-transparency'],
-      ['Annual Reports', '/about/annual-reports'],
     ],
   },
   {
@@ -56,7 +52,6 @@ export const nav = [
       ['How It Works', '/programs/how-it-works'],
       ['Veteran Retreats', '/programs/veteran-retreats'],
       ['Coaching', '/programs/coaching'],
-      ['Community', '/programs/community'],
       ['Eligibility & FAQ', '/programs/eligibility-and-faq'],
     ],
   },

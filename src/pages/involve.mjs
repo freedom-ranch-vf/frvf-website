@@ -103,7 +103,7 @@ ${section({
       { title: 'A three-day retreat', text: 'A small cohort of 12 veterans on a private ranch estate, away from the noise.', link: ['Retreat details', '/programs/veteran-retreats'] },
       { title: 'Six months of coaching', text: 'One-on-one Thrive in Transition™ coaching that turns clarity into a real plan.', link: ['About the coaching', '/programs/coaching'] },
       { title: 'A family track', text: 'Family retreats welcome spouses and children, and single-veteran retreats are offered separately.', link: ['Eligibility & FAQ', '/programs/eligibility-and-faq'] },
-      { title: 'An alumni community', text: 'Stay connected to your cohort, your coach, and veterans further down the same road.', link: ['About the community', '/programs/community'] },
+      { title: 'An alumni community', text: 'Stay connected to your cohort, your coach, and veterans further down the same road.', link: ['About the community', '/programs#community'] },
     ],
     'c4'
   ),

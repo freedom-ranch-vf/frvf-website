@@ -39,7 +39,7 @@ export default [
   {
     path: '/about',
     title: 'About Freedom Ranch',
-    desc: 'Freedom Ranch Veterans Foundation was founded by veterans who lived the transition problem before they built the solution.',
+    desc: 'Freedom Ranch Veterans Foundation was founded by veterans who lived the transition problem before they built the solution. Our mission, values, and story.',
     render() {
       return `${pageHero({
         eyebrow: 'About',
@@ -59,47 +59,21 @@ ${section({
 <p>Together, these three founders built Freedom Ranch around a different definition of support: not a final checklist to close out a service member’s file, but a real process, retreats, coaching, and community, to help veterans move from who the military shaped them to be into who they choose to become next.</p>
 ${tagline()}`),
 })}
-${ctaBand({ title: 'Where it all started.', actions: btn('Learn Our Story', '/about/our-story') })}`;
-    },
-  },
-
-  {
-    path: '/about/our-mission',
-    title: 'Our Mission',
-    desc: 'Our mission is to help post-9/11 veterans navigate life after service through restorative retreats, transition coaching, wellness experiences, and lifelong community.',
-    render() {
-      return `${pageHero({
-        eyebrow: 'Mission',
-        title: 'Helping post-9/11 veterans navigate life after service.',
-        lede: 'Through restorative retreats, transition coaching, wellness experiences, and lifelong community.',
-      })}
 ${section({
-  narrow: true,
+  id: 'mission',
+  cls: 'sand',
+  eyebrow: 'Mission',
+  title: 'Helping post-9/11 veterans navigate life after service.',
+  intro: '<p>Through restorative retreats, transition coaching, wellness experiences, and lifelong community.</p>',
   body: prose(`
 <p class="pull">The military spends years building a person. It rarely spends more than a few weeks unbuilding one.</p>
 <p>Freedom Ranch Veterans Foundation exists to close that gap. Our mission is to give post-9/11 veterans a real process, not a checklist, for moving from the identity, structure, and purpose the military built into them, toward a civilian life they choose for themselves. We do this through immersive retreats on ranch estates away from the noise of everyday life, six months of professional coaching delivered through our Thrive in Transition™ model, wellness experiences that strengthen body and mind, and a community that stays with veterans long after the retreat ends.</p>
-<p>Our retreats and coaching are guided by the Ideal Life Framework, which treats the stress and uncertainty of transition not as something to push past, but as raw material veterans can use to discover their purpose and rebuild with intention.</p>`),
+<p>Our retreats and coaching are guided by the Ideal Life Framework, which treats the stress and uncertainty of transition not as something to push past, but as raw material veterans can use to discover their purpose and rebuild with intention.</p>`) + `<h3 style="margin:2.4rem 0 1.2rem">What we believe</h3>` + cards(values.map(([t, d]) => ({ title: t, text: d })), 'c3'),
 })}
 ${section({
-  cls: 'sand',
-  eyebrow: 'Values',
-  title: 'What we believe',
-  body: cards(values.map(([t, d]) => ({ title: t, text: d })), 'c3') + `<div style="margin-top:2.2rem">${tagline()}</div>`,
-})}
-${ctaBand({ title: 'See how the journey works.', actions: btn('See How It Works', '/programs/how-it-works') })}`;
-    },
-  },
-
-  {
-    path: '/about/our-story',
-    title: 'Our Story',
-    desc: 'Freedom Ranch started with an idea Matt Beaghley couldn’t shake: veterans need distance from the noise, a framework, and people who understand the road.',
-    render() {
-      return `${pageHero({
-        eyebrow: 'Our Story',
-        title: 'It started with an idea Matt Beaghley couldn’t shake.',
-      })}
-${section({
+  id: 'story',
+  eyebrow: 'Our Story',
+  title: 'It started with an idea Matt Beaghley couldn’t shake.',
   narrow: true,
   body: prose(`
 <p>Matt spent 20 years in the Navy, first as an enlisted sailor, then as a commissioned officer, a path that gave him a rare view of military life from both sides of the chain of command. As a Naval Flight Officer, he flew the E-2C Hawkeye, serving as a strike lead and mission commander, and earned his place as a graduate of the Navy’s TOPGUN program. Over two decades of service, he watched veteran after veteran hit the same wall on their way out: the military prepares people to leave in almost every way except the ones that matter most. Late in his career, Matt managed the contract for the Navy’s Flag Officer transition program, giving him a front-row seat to something telling: even senior admirals, backed by high-level executive coaching, struggled with the same unresolved questions of identity and purpose as junior sailors walking out the door. If the most experienced leaders in the Navy couldn’t transition cleanly with elite coaching behind them, Matt knew the standard checklist most veterans received wasn’t close to enough.</p>
@@ -109,69 +83,37 @@ ${section({
 <p class="pull">Veterans don’t need another checklist. They need distance from the noise, a framework for turning hard change into real purpose, and people who understand the road well enough to walk it with them.</p>
 <p>Together, the three of them built Freedom Ranch around what each of them already knew from experience.</p>`),
 })}
-${ctaBand({ title: 'Meet the people behind it.', actions: btn('Meet Our Leadership', '/about/leadership') })}`;
+${ctaBand({ title: 'Meet the people behind it.', actions: btn('Meet Our Team', '/about/team') })}`;
     },
   },
 
   {
-    path: '/about/founder',
-    title: 'Co-Founder Sandy Lehmkuhler',
-    desc: 'Sandy Lehmkuhler, co-founder of Freedom Ranch Veterans Foundation, has spent more than two decades serving veterans and military families.',
+    path: '/about/team',
+    title: 'Our Team',
+    desc: 'Freedom Ranch is led by three co-founders who lived the transition problem, and guided by a board of directors.',
     render() {
-      return `${pageHero({ eyebrow: 'Co-Founder', title: 'Sandy Lehmkuhler', lede: 'A Personal Story. A Bigger Mission.' })}
-<section class="section">
-  <div class="wrap split">
-    <div>${portrait('sandy', 'Sandy Lehmkuhler, Co-Founder', 'SL')}</div>
-    <div class="prose">
-      <p>Sandy Lehmkuhler didn’t set out to build a career in veteran advocacy. She set out to fix a problem she couldn’t ignore.</p>
+      return `${pageHero({
+        eyebrow: 'Leadership and Governance',
+        title: 'Our Team',
+        lede: 'Freedom Ranch is led by three co-founders who didn’t just study the transition problem. They lived it.',
+      })}
+${section({ id: 'leadership', body: `<div class="people">${people.map(personBlock).join('')}</div>` })}
+${section({
+  id: 'sandy',
+  cls: 'sand',
+  eyebrow: 'Co-Founder',
+  title: 'Sandy Lehmkuhler: a personal story, a bigger mission.',
+  body: `<div class="split"><div>${portrait('sandy', 'Sandy Lehmkuhler, Co-Founder', 'SL')}</div><div class="prose"><p>Sandy Lehmkuhler didn’t set out to build a career in veteran advocacy. She set out to fix a problem she couldn’t ignore.</p>
       <p>Back in 2004, as a Navy wife, Sandy watched the needs of injured troops go unmet in ways that struck her as simply unacceptable. So she did something about it, founding a nonprofit dedicated to supporting ill and injured warriors during their recovery and transition. What began with quality-of-life support grew into something more ambitious: a transitional housing model built on a simple insight, that veterans succeed best when they start acclimating to civilian life before their discharge, not after, with the guidance and time to relearn how to manage a life the military once managed for them.</p>
       <p>Two decades later, that insight has touched thousands of warriors and their families. But for Sandy, the work was never really about a single organization. It was about a truth she kept encountering again and again: the hardest part of service often isn’t the wound. It’s what comes after, when a servicemember has to rebuild an identity, a routine, and a sense of purpose almost entirely from scratch.</p>
       <p>As the spouse of a veteran, the mother of a veteran, and the mother-in-law of two veterans, the military community isn’t a cause Sandy stepped into. It’s her family.</p>
-      <p>Freedom Ranch is the next chapter in that lifelong commitment, built alongside co-founders Matt Beaghley and Povas Miknaitis to reach every veteran facing that transition, not only the wounded, with the same rest, structure, and community Sandy has spent her life fighting to provide.</p>
-    </div>
-  </div>
-</section>
-${ctaBand({ title: 'Help carry the mission forward.', actions: btn('Support Our Mission', site.donateUrl) })}`;
-    },
-  },
-
-  {
-    path: '/about/leadership',
-    title: 'Leadership',
-    desc: 'Freedom Ranch is led by three co-founders who didn’t just study the transition problem. They lived it.',
-    render() {
-      return `${pageHero({
-        eyebrow: 'Executive Team',
-        title: 'Leadership',
-        lede: 'Freedom Ranch is led by three co-founders who didn’t just study the transition problem. They lived it.',
-      })}
-${section({ body: `<div class="people">${people.map(personBlock).join('')}</div>` })}
-${ctaBand({ title: 'Governance and stewardship.', actions: btn('Meet Our Board', '/about/board-of-directors') })}`;
-    },
-  },
-
-  {
-    path: '/about/board-of-directors',
-    title: 'Board of Directors',
-    desc: 'Governance at Freedom Ranch Veterans Foundation: our officers and board of directors.',
-    render() {
-      return `${pageHero({
-        eyebrow: 'Governance',
-        title: 'Board of Directors',
-        lede: 'Freedom Ranch is led by its officers and guided by a board of directors.',
-      })}
-${section({
-  eyebrow: 'Officers',
-  title: 'Our officers',
-  body: cards(
-    people.map((p) => ({ kicker: p.role.split(', ').slice(-2, -1)[0], title: p.name, text: p.role })),
-    'c3'
-  ),
+      <p>Freedom Ranch is the next chapter in that lifelong commitment, built alongside co-founders Matt Beaghley and Povas Miknaitis to reach every veteran facing that transition, not only the wounded, with the same rest, structure, and community Sandy has spent her life fighting to provide.</p></div></div>`,
 })}
 ${section({
-  cls: 'sand',
+  id: 'board',
   narrow: true,
-  title: 'Board members',
+  eyebrow: 'Governance',
+  title: 'Board of Directors',
   body: `<div class="placeholder-box"><p>Our full board of directors, with biographies, will be listed here soon.</p></div>`,
 })}
 ${ctaBand({ title: 'How we steward every dollar.', actions: btn('Financial Transparency', '/about/financial-transparency') })}`;
@@ -180,8 +122,8 @@ ${ctaBand({ title: 'How we steward every dollar.', actions: btn('Financial Trans
 
   {
     path: '/about/financial-transparency',
-    title: 'Financial Transparency',
-    desc: 'Every donor deserves to know exactly how their gift is used. Freedom Ranch is committed to full financial transparency.',
+    title: 'Financial Transparency and Reporting',
+    desc: 'Every donor deserves to know exactly how their gift is used. Freedom Ranch is committed to full financial transparency and annual impact reporting.',
     render() {
       return `${pageHero({ eyebrow: 'Trust and Stewardship', title: 'Financial Transparency' })}
 ${section({
@@ -189,18 +131,12 @@ ${section({
   body: `${prose(`<p>Every donor deserves to know exactly how their gift is used. Freedom Ranch is committed to full financial transparency, publishing our IRS Form 990 and a clear breakdown of how funds are allocated across programs, coaching, and operations. As a donor-supported nonprofit, we hold ourselves to the highest standard of stewardship, because trust is earned one honest dollar at a time.</p>`)}
   <div class="actions">${docLink('View our most recent Form 990', docs.form990)}${docLink('View program spending breakdown', docs.spendingBreakdown)}</div>`,
 })}
-${ctaBand({ title: 'See our reporting.', actions: btn('View Annual Reports', '/about/annual-reports') })}`;
-    },
-  },
-
-  {
-    path: '/about/annual-reports',
-    title: 'Annual Reports',
-    desc: 'Freedom Ranch will publish an annual report on our reach and impact as real results come in.',
-    render() {
-      return `${pageHero({ eyebrow: 'Impact Reporting', title: 'Annual Reports' })}
 ${section({
+  id: 'annual-reports',
+  cls: 'sand',
   narrow: true,
+  eyebrow: 'Impact Reporting',
+  title: 'Annual Reports',
   body: `${prose(`<p>As Freedom Ranch grows, we will publish an annual report detailing our reach and impact, including veterans served, coaching outcomes, family impact, and alumni engagement. Our first cohorts are just getting started, and we’re committed to reporting honestly on our progress as real results come in.</p>`)}
   <div class="placeholder-box"><p>Annual reports will be posted here as they become available.</p></div>`,
 })}

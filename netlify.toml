@@ -15,3 +15,38 @@
   for = "/img/*"
   [headers.values]
     Cache-Control = "public, max-age=604800"
+
+[[redirects]]
+  from = "/about/our-mission"
+  to = "/about#mission"
+  status = 301
+
+[[redirects]]
+  from = "/about/our-story"
+  to = "/about#story"
+  status = 301
+
+[[redirects]]
+  from = "/about/founder"
+  to = "/about/team#sandy"
+  status = 301
+
+[[redirects]]
+  from = "/about/leadership"
+  to = "/about/team"
+  status = 301
+
+[[redirects]]
+  from = "/about/board-of-directors"
+  to = "/about/team#board"
+  status = 301
+
+[[redirects]]
+  from = "/about/annual-reports"
+  to = "/about/financial-transparency#annual-reports"
+  status = 301
+
+[[redirects]]
+  from = "/programs/community"
+  to = "/programs#community"
+  status = 301
