@@ -65,3 +65,7 @@ Pages CMS (free, https://pagescms.org) gives the team a simple web editor for th
 
 The editor setup is in `.pages.yml`. Page layouts and wording on the main pages (home, programs, about) are still in `src/pages/`.
 Past and upcoming events sort by date at build time. To keep them fresh without a manual save, add a Netlify build hook and call it daily from a free scheduler.
+
+## How changes get published
+
+Pushing to the `main` branch on GitHub publishes the site automatically through Netlify (about a minute). Form submissions are emailed from the Netlify Forms settings.
