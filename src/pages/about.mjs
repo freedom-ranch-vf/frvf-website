@@ -114,7 +114,13 @@ ${section({
   narrow: true,
   eyebrow: 'Governance',
   title: 'Board of Directors',
-  body: prose(`<p>Freedom Ranch Veterans Foundation is governed by its founding board: Povas Miknaitis (President), Matthew Beaghley (Treasurer), and Sandy Lehmkuhler (Secretary). As the organization grows, additional directors will be added here.</p>`),
+  body: prose(`<p>Freedom Ranch Veterans Foundation is governed by a five-member board of directors.</p>`) + cards([
+    { kicker: 'President', title: 'Povas Miknaitis', text: 'Co-Founder' },
+    { kicker: 'Treasurer', title: 'Matthew Beaghley', text: 'Co-Founder' },
+    { kicker: 'Secretary', title: 'Sandy Lehmkuhler', text: 'Co-Founder' },
+    { kicker: 'Director', title: 'Eddie Dinkins', text: '' },
+    { kicker: 'Director', title: 'Marcus Chischilly', text: '' },
+  ], 'c3'),
 })}
 ${ctaBand({ title: 'How we steward every dollar.', actions: btn('Financial Transparency', '/about/financial-transparency') })}`;
     },
