@@ -123,8 +123,10 @@ ul { padding-left: 1.2em; }
 
 /* ---------- hero (home) ---------- */
 .hero { position: relative; overflow: hidden; background: var(--ink) url('/img/topo-light.svg') center / cover; color: var(--sand); padding: clamp(3.5rem, 10vw, 7.5rem) 0 clamp(3.5rem, 9vw, 6.5rem); }
-.hero.has-photo { background-size: cover; }
-.hero.has-photo::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(28, 33, 38, 0.92) 25%, rgba(28, 33, 38, 0.55)); }
+.hero.has-photo { background-size: cover; background-position: 70% center; }
+.hero.has-photo .rose { display: none; }
+.hero.has-photo::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(18, 26, 43, 0.9) 0%, rgba(18, 26, 43, 0.72) 38%, rgba(18, 26, 43, 0.15) 75%); }
+@media (max-width: 760px) { .hero.has-photo::before { background: rgba(18, 26, 43, 0.78); } }
 .hero .wrap { position: relative; z-index: 2; }
 .hero .eyebrow { color: var(--brass-l); }
 .hero h1 { max-width: 15ch; color: var(--cream); }
