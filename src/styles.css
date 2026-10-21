@@ -198,7 +198,7 @@ ul { padding-left: 1.2em; }
 /* ---------- founder ---------- */
 .split { display: grid; gap: 2.4rem; align-items: center; }
 @media (min-width: 860px) { .split { grid-template-columns: 5fr 7fr; gap: 4rem; } .split.flip { grid-template-columns: 7fr 5fr; } }
-.portrait { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--r); background: var(--sand-2); }
+.portrait { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--r); background: var(--sand-2); }
 .portrait-fallback { display: grid; place-items: center; position: relative; color: var(--brass); background: var(--ink); --compass-hub: var(--ink); overflow: hidden; }
 .portrait-fallback .pf-compass { position: absolute; width: 78%; opacity: 0.28; }
 .portrait-fallback span { position: relative; font-family: var(--serif); font-size: clamp(3rem, 9vw, 5rem); color: var(--sand); font-weight: 400; }
