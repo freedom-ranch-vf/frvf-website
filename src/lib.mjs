@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import crypto from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { site, nav, partners } from './data/site.mjs';
@@ -195,6 +196,9 @@ function header() {
 </header>`;
 }
 
+// Version stamp so browsers fetch fresh CSS/JS after every deploy instead of using a cached copy.
+const assetVersion = crypto.createHash('md5').update(fs.readFileSync(new URL('./styles.css', import.meta.url))).digest('hex').slice(0, 8);
+
 const icons = {
   linkedin: '<path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3V9.75zm6.5 0h3.8v1.54h.05c.53-1 1.82-2.05 3.75-2.05 4 0 4.75 2.63 4.75 6.06V21h-4v-4.9c0-1.17-.02-2.67-1.63-2.67-1.63 0-1.88 1.27-1.88 2.59V21h-4V9.75z"/>',
   facebook: '<path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.95c0-.9.25-1.5 1.55-1.5h1.65V3.65A22 22 0 0 0 14.3 3.5c-2.4 0-4 1.45-4 4.1v2.3H7.6V13h2.7v8h3.2z"/>',
@@ -266,7 +270,7 @@ ${og ? `<meta property="og:image" content="${og}"><meta name="twitter:card" cont
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Barlow:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/styles.css?v=${assetVersion}">
 <script>document.documentElement.classList.add('js')</script>
 ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld)}</script>` : ''}
 </head>
@@ -276,7 +280,7 @@ ${header()}
 ${body}
 </main>
 ${footer()}
-<script src="/main.js" defer></script>
+<script src="/main.js?v=${assetVersion}" defer></script>
 </body>
 </html>`;
 }
