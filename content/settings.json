@@ -1,0 +1,35 @@
+{
+  "name": "Freedom Ranch Veterans Foundation",
+  "short": "Freedom Ranch",
+  "tagline": "Rest. Refresh. Rebuild.",
+  "email": "info@frvf.org",
+  "address": {
+    "street": "2869 Historic Decatur Rd., Suite 100",
+    "city": "San Diego",
+    "region": "CA",
+    "zip": "92106"
+  },
+  "donateUrl": "https://givebutter.com/A85Sdt",
+  "shaveClubUrl": "https://givebutter.com/A85Sdt",
+  "crisisLine": "Veterans Crisis Line: dial 988, then press 1",
+  "crisisText": "text 838255",
+  "form990": "",
+  "spendingBreakdown": "",
+  "videos": [
+    {
+      "title": "Our Mission",
+      "desc": "Why Freedom Ranch exists.",
+      "url": ""
+    },
+    {
+      "title": "Our Story",
+      "desc": "The vision behind Rest. Refresh. Rebuild.",
+      "url": ""
+    },
+    {
+      "title": "Sandy, Matt & Povas",
+      "desc": "The personal story that helped inspire the mission.",
+      "url": ""
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+# Pages CMS configuration (https://pagescms.org). Lets the FRVF team edit site content
+# from a web page. Every save is a commit to GitHub, and Netlify rebuilds the site.
+media:
+  input: src/assets/img
+  output: /img
+content:
+  - name: settings
+    label: Site settings
+    type: file
+    path: content/settings.json
+    format: json
+    fields:
+      - { name: email, label: Contact email, type: string }
+      - name: address
+        label: Mailing address
+        type: object
+        fields:
+          - { name: street, label: Street, type: string }
+          - { name: city, label: City, type: string }
+          - { name: region, label: State, type: string }
+          - { name: zip, label: ZIP, type: string }
+      - { name: donateUrl, label: Donate link (Givebutter), type: string }
+      - { name: shaveClubUrl, label: Freedom Shave Club link, type: string }
+      - { name: form990, label: Form 990 link (leave blank until published), type: string }
+      - { name: spendingBreakdown, label: Program spending breakdown link, type: string }
+      - name: videos
+        label: Featured videos (paste a YouTube or Vimeo link)
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: desc, label: Short description, type: string }
+          - { name: url, label: Video link, type: string }
+
+  - name: events
+    label: Events
+    type: collection
+    path: content/events
+    format: yaml-frontmatter
+    filename: "{fields.date}-{primary}.md"
+    view:
+      fields: [title, date, location]
+      primary: title
+      sort: [date]
+      default: { sort: date, order: desc }
+    fields:
+      - { name: title, label: Event name, type: string, required: true }
+      - { name: date, label: Start date, type: date, required: true }
+      - { name: endDate, label: End date (multi-day events only), type: date }
+      - { name: location, label: Location, type: string }
+      - name: category
+        label: Type
+        type: select
+        options: { values: [Community, Fundraiser, Retreat, Volunteer] }
+      - { name: link, label: Link for more details (optional), type: string }
+      - { name: body, label: Description, type: rich-text }
+
+  - name: articles
+    label: Articles and news
+    type: collection
+    path: content/articles
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      fields: [title, category, date]
+      primary: title
+      sort: [date]
+      default: { sort: date, order: desc }
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: date, label: Publish date, type: date, required: true }
+      - name: category
+        label: Category
+        type: select
+        options: { values: [Transition, Community, Leadership, Family, Wellness, News/Press] }
+      - { name: label, label: Small label above the title, type: string }
+      - { name: excerpt, label: Short summary (shows on cards), type: text }
+      - { name: draft, label: Hide for now (draft), type: boolean }
+      - { name: body, label: Article, type: rich-text }
+
+  - name: partners
+    label: Partners
+    type: file
+    path: content/partners.json
+    format: json
+    fields:
+      - name: items
+        label: Partners
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Organization name, type: string, required: true }
+          - { name: show, label: Show on the Partners page, type: boolean }
+          - { name: home, label: Show on the home page, type: boolean }
+          - { name: url, label: Website (optional), type: string }

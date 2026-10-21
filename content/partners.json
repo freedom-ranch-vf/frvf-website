@@ -1,0 +1,52 @@
+{
+  "items": [
+    {
+      "name": "Semper Solaris",
+      "home": true,
+      "show": true,
+      "url": ""
+    },
+    {
+      "name": "CARS",
+      "home": true,
+      "show": true,
+      "url": ""
+    },
+    {
+      "name": "Tee It Up for Troops, Huntington Beach",
+      "home": false,
+      "show": true,
+      "url": ""
+    },
+    {
+      "name": "AFSA",
+      "home": false,
+      "show": false,
+      "url": ""
+    },
+    {
+      "name": "Over the Hill Gang",
+      "home": false,
+      "show": false,
+      "url": ""
+    },
+    {
+      "name": "Sell State Realty",
+      "home": false,
+      "show": false,
+      "url": ""
+    },
+    {
+      "name": "Doyle Foundation",
+      "home": true,
+      "show": false,
+      "url": ""
+    },
+    {
+      "name": "Lilikoi Agency",
+      "home": false,
+      "show": false,
+      "url": ""
+    }
+  ]
+}
