@@ -44,7 +44,7 @@ const applyFields = [
     options: ['Single-veteran retreat', 'Family retreat (spouse and children)', 'Not sure yet'],
     hint: 'We will confirm the right fit with you when we follow up.',
   }),
-  field({ name: 'travel', label: 'Can you travel to Temecula, CA for the March 2027 retreat? Any dates you cannot do?', type: 'textarea', rows: 3 }),
+  field({ name: 'travel', label: 'Can you travel to Temecula or the Coachella Valley?', required: true, options: ['Yes, either location', 'Temecula only', 'Coachella Valley only', 'Not sure yet'] }),
   field({
     name: 'how_heard', label: 'How did you hear about Freedom Ranch?',
     options: ['A friend or fellow veteran', 'Social media', 'A veteran organization', 'An event', 'Online search', 'Other'],
