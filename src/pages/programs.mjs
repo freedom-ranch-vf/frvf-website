@@ -45,6 +45,19 @@ ${section({
 <p class="pull">Transition doesn’t have a finish line. Neither does this community.</p>
 <p>Freedom Ranch alumni have a place to belong long after the retreat ends, because no veteran should have to keep rebuilding alone once the formal program is over.</p>`),
 })}
+${section({
+  id: 'workshops',
+  eyebrow: 'Workshops',
+  title: 'A shorter way to start.',
+  intro: '<p>We are planning one-day and overnight workshops for post-9/11 veterans who want a taste of the Freedom Ranch approach. Dates will be announced soon.</p>',
+  body: cards(
+    [
+      { kicker: 'Workshop', title: 'One day or overnight', text: 'Guided sessions on identity, purpose, and next steps, with practical sessions led by professionals from our network. You leave with a written 90-day plan. Six-month coaching is not part of the workshop.' },
+      { kicker: 'Retreat', title: 'Three days plus six months', text: 'The full Freedom Ranch program: a three-day retreat with a small cohort, six months of one-on-one coaching, and our alumni community. Workshop participants are welcome to apply.' },
+    ],
+    'c2'
+  ),
+})}
 ${ctaBand({ title: 'Four steps from application to alumni.', actions: btn('See How It Works', '/programs/how-it-works') })}`;
     },
   },
