@@ -333,3 +333,11 @@ button.video-thumb:hover .play { transform: scale(1.08); }
 .site-footer { position: relative; overflow: hidden; }
 .site-footer::before { content: ''; position: absolute; right: -120px; top: -60px; width: 420px; height: 420px; background: url('/img/compass-white.png') center / contain no-repeat; opacity: 0.05; pointer-events: none; }
 .site-footer .wrap { position: relative; z-index: 1; }
+
+/* ---------- form groups and checkboxes ---------- */
+.form-group { margin-top: 1.4rem; padding-top: 1.2rem; border-top: 1px solid var(--line); }
+.form-group:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+.form-group h3 { font-size: 1.15rem; margin: 0; }
+.field.check .check-label { display: flex; gap: 0.7rem; align-items: flex-start; font-weight: 500; line-height: 1.45; cursor: pointer; }
+.field.check input[type="checkbox"] { width: 1.3rem; height: 1.3rem; flex: none; margin-top: 0.15rem; accent-color: var(--clay); }
+.field.check input.invalid { outline: 3px solid #a32020; }

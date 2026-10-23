@@ -149,6 +149,9 @@ export function field({ name, label, type = 'text', required = false, options = 
   const id = `f-${name}`;
   const req = required ? ' required' : '';
   const ac = autocomplete ? ` autocomplete="${autocomplete}"` : '';
+  if (type === 'checkbox') {
+    return `<div class="field check"><label class="check-label" for="${id}"><input id="${id}" name="${name}" type="checkbox" value="Yes"${req}><span>${label}</span></label>${hint ? `<p class="hint">${hint}</p>` : ''}</div>`;
+  }
   let control;
   if (options) {
     control = `<select id="${id}" name="${name}"${req}><option value="">Select one</option>${options.map((o) => `<option>${esc(o)}</option>`).join('')}</select>`;
@@ -159,6 +162,8 @@ export function field({ name, label, type = 'text', required = false, options = 
   }
   return `<div class="field"><label for="${id}">${label}${required ? '' : ' <span class="opt">(optional)</span>'}</label>${control}${hint ? `<p class="hint">${hint}</p>` : ''}</div>`;
 }
+
+export const formGroup = (title, hint = '') => `<div class="form-group"><h3>${title}</h3>${hint ? `<p class="hint">${hint}</p>` : ''}</div>`;
 
 export function form({ id, endpoint, subject, fields, submit, success }) {
   const nl = endpoint ? '' : ` name="${esc(id)}" method="POST" data-netlify="true" netlify-honeypot="company"`;

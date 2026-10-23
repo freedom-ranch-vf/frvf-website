@@ -1,25 +1,68 @@
 import { site, videos, partners } from '../data/site.mjs';
 import { readCollection } from '../data/content.mjs';
-import { btn, ctaBand, cards, section, pageHero, prose, tagline, videoCard, supporters, field, form, esc } from '../lib.mjs';
+import { btn, ctaBand, cards, section, pageHero, prose, tagline, videoCard, supporters, field, form, formGroup, esc } from '../lib.mjs';
 
 const branches = ['Army', 'Marine Corps', 'Navy', 'Air Force', 'Space Force', 'Coast Guard', 'Army National Guard', 'Air National Guard', 'Reserve component', 'Other'];
 
 const applyFields = [
+  formGroup('About you'),
   field({ name: 'full_name', label: 'Full name', required: true, autocomplete: 'name' }),
   field({ name: 'email', label: 'Email', type: 'email', required: true, autocomplete: 'email' }),
-  field({ name: 'phone', label: 'Phone', type: 'tel', autocomplete: 'tel' }),
+  field({ name: 'phone', label: 'Phone', type: 'tel', required: true, autocomplete: 'tel' }),
+  field({ name: 'city_state', label: 'City and state', required: true, autocomplete: 'address-level2' }),
+  field({
+    name: 'age_range', label: 'Age range', required: true,
+    options: ['Under 25', '25 to 34', '35 to 44', '45 to 54', '55 or older'],
+    hint: 'We group cohorts by age, not rank, so veterans connect with others at a similar stage of life.',
+  }),
+
+  formGroup('Your service'),
   field({ name: 'branch', label: 'Branch of service', required: true, options: branches }),
   field({
-    name: 'status', label: 'Where are you in your transition?', required: true,
-    options: ['Active duty, within 18 months of separation', 'Separated within the last 18 months', 'Something else (tell us below)'],
+    name: 'service_status', label: 'Service status', required: true,
+    options: ['Active duty', 'Veteran', 'National Guard or Reserve'],
   }),
   field({ name: 'separation_date', label: 'Separation date (or expected separation date)', type: 'date', required: true }),
+  field({
+    name: 'rank_group', label: 'Rank group', required: true,
+    options: ['Enlisted', 'Warrant officer', 'Officer'],
+    hint: 'This is context only. Rank does not affect cohort placement.',
+  }),
+  field({ name: 'years_served', label: 'Years of service', required: true, hint: 'A rough number is fine.' }),
+
+  formGroup('Where you are now'),
+  field({
+    name: 'status', label: 'Where are you in your transition?', required: true,
+    options: ['Preparing to separate (within 18 months)', 'Separated within the last 12 months', 'Separated 12 to 18 months ago', 'Something else (tell us below)'],
+  }),
+  field({ name: 'hoping_for', label: 'What are you hoping to get out of Freedom Ranch?', type: 'textarea', required: true, rows: 5, hint: 'A few sentences is plenty.' }),
+  field({ name: 'biggest_concern', label: 'What is your single biggest concern about your transition right now?', type: 'textarea', required: true, rows: 4 }),
+
+  formGroup('Fit and logistics'),
   field({
     name: 'retreat_format', label: 'Retreat format', required: true,
     options: ['Single-veteran retreat', 'Family retreat (spouse and children)', 'Not sure yet'],
     hint: 'We will confirm the right fit with you when we follow up.',
   }),
-  field({ name: 'hoping_for', label: 'What are you hoping to get out of Freedom Ranch?', type: 'textarea', required: true, rows: 6, hint: 'A few sentences is plenty.' }),
+  field({ name: 'travel', label: 'Can you travel to the Coachella Valley or San Diego County? Any dates you cannot do?', type: 'textarea', rows: 3 }),
+  field({
+    name: 'how_heard', label: 'How did you hear about Freedom Ranch?',
+    options: ['A friend or fellow veteran', 'Social media', 'A veteran organization', 'An event', 'Online search', 'Other'],
+  }),
+
+  formGroup('Before you submit'),
+  field({
+    name: 'ack_deposit', required: true, type: 'checkbox',
+    label: 'I understand that if I am accepted, I will pay a $500 accountability deposit before the retreat. The deposit is refunded in full when I complete the six-month coaching program. If I withdraw, it is forfeited, except for extenuating circumstances, which are reviewed individually.',
+  }),
+  field({
+    name: 'ack_service', required: true, type: 'checkbox',
+    label: 'I confirm that I served in the U.S. armed forces, and I understand my service will be verified.',
+  }),
+  field({
+    name: 'ack_contact', required: true, type: 'checkbox',
+    label: 'I agree to be contacted by email, phone, or text about my application.',
+  }),
 ].join('');
 
 const contactTopics = ['General question', 'Volunteering', 'Mentoring', 'Hosting a retreat', 'Partnership', 'Sharing my story', 'Vehicle donation', 'Donating by check'];
@@ -44,7 +87,7 @@ export default [
             endpoint: site.applyEndpoint,
             subject: 'Freedom Ranch retreat application',
             fields: applyFields,
-            submit: 'Start Your Application',
+            submit: 'Submit Your Application',
             success: 'Thank you. Your application is in. Our team will follow up with next steps.',
           });
       return `${pageHero({
@@ -58,16 +101,20 @@ export default [
       ${formHtml}
     </div>
     <aside>
+      <div class="card" style="margin-bottom:1.2rem;border-color:var(--clay)">
+        <h3>If tonight is the problem</h3>
+        <p style="margin:0">${site.crisisLine}, or ${site.crisisText}. Free, confidential, 24/7. You can apply tomorrow.</p>
+      </div>
       <div class="card" style="margin-bottom:1.2rem">
         <h3>What to have ready</h3>
         <ul class="checklist" style="margin:0">
-          <li>Branch of service and separation date (or expected separation date)</li>
-          <li>A few sentences on what you’re hoping to get out of Freedom Ranch</li>
+          <li>Branch of service, years served, and separation date (or expected separation date)</li>
+          <li>A few sentences on what you’re hoping to get out of Freedom Ranch, and what concerns you most about your transition</li>
         </ul>
       </div>
       <div class="card">
         <h3>What happens next</h3>
-        <p style="margin:0">Our team reviews every application individually and will follow up to talk through cohort placement, whether a family retreat or a single-veteran retreat is the right fit, and next steps, including verification of service and the refundable commitment fee.</p>
+        <p style="margin:0">Our team reviews every application individually and will follow up to talk through cohort placement, whether a family retreat or a single-veteran retreat is the right fit, and next steps, including verification of service. If you’re accepted, the $500 accountability deposit is collected then, not with this application, and it’s refunded in full when you complete the six-month coaching program.</p>
       </div>
       <p class="hint" style="margin-top:1.2rem">Questions first? Read the <a href="/programs/eligibility-and-faq">Eligibility &amp; FAQ</a> or <a href="/contact">contact us</a>.</p>
     </aside>
@@ -116,7 +163,7 @@ ${section({
   body: `<ol class="steps">
     <li><h3>Fill out the short application</h3><p>It takes about five to ten minutes.</p></li>
     <li><h3>Our team follows up</h3><p>Every application is reviewed personally, including cohort placement and retreat format.</p></li>
-    <li><h3>Confirm and show up</h3><p>Service is verified and the small, fully refundable commitment fee is arranged. Then we get you to the ranch.</p></li>
+    <li><h3>Confirm and show up</h3><p>Service is verified and the $500 accountability deposit (refunded when you complete the program) is arranged. Then we get you to the ranch.</p></li>
   </ol><div class="actions">${btn('Start Your Application', '/apply')}</div>`,
 })}
 ${section({

@@ -1,14 +1,14 @@
 import { btn, ctaBand, cards, section, pageHero, prose, faq, tagline } from '../lib.mjs';
 
 const faqs = [
-  ['Is there a cost to attend?', 'Freedom Ranch is donor-funded, so veterans who complete the program bear no cost, only the commitment to follow through. To enter, participants pay a small, fully refundable commitment fee, returned in full once you complete the six-month coaching journey.'],
+  ['Is there a cost to attend?', 'Freedom Ranch is donor-funded, so veterans who complete the program bear no cost, only the commitment to follow through. Once accepted, participants pay a $500 accountability deposit, refunded in full when you complete the six-month coaching program.'],
   ['Am I eligible if I haven’t separated yet?', 'Yes. Freedom Ranch welcomes applications from active-duty servicemembers within 18 months of their separation date, as well as veterans within 18 months of having already transitioned out.'],
   ['What does the retreat involve?', 'A three-day, immersive experience on a private estate with a small cohort of 12 fellow veterans, combining four to five hours of daily coaching and group activities with time for personal reflection and recreation.'],
   ['What happens after the retreat?', 'Every veteran continues into six months of one-on-one coaching, beginning on-site and continuing virtually, followed by ongoing access to the Freedom Ranch alumni community.'],
   ['Can spouses or family members attend the retreat?', 'Yes, for select retreats. Freedom Ranch offers both family retreats, where spouses and children are welcome to attend, and retreats designed specifically for single veterans. When you apply, you’ll be matched to the retreat format that fits your situation.'],
   ['How are cohorts selected?', 'Cohorts are grouped primarily by age rather than rank or role, since we’ve found veterans connect more naturally, and open up more honestly, with others navigating a similar life stage. Rank doesn’t factor into cohort placement at all.'],
   ['Where do retreats take place?', 'Retreats are held on large private estates, typically in the Coachella Valley or San Diego County.'],
-  ['What if I don’t complete the program?', 'The commitment fee is designed to reflect real follow-through. If a veteran withdraws from the program, the fee is forfeited. That said, we understand life happens: extenuating circumstances, like a medical or family emergency, are reviewed individually, and we’ll work with veterans to find a way to reaccommodate them wherever possible.'],
+  ['What if I don’t complete the program?', 'The $500 accountability deposit is designed to reflect real follow-through. If a veteran withdraws from the program, the deposit is forfeited. That said, we understand life happens: extenuating circumstances, like a medical or family emergency, are reviewed individually, and we’ll work with veterans to find a way to reaccommodate them wherever possible.'],
 ];
 
 export const faqItems = faqs;
@@ -67,7 +67,7 @@ ${section({
   <li><h3>Coaching</h3><p>The work doesn’t end when the retreat does. Coaching begins on-site and continues virtually for six months afterward through our Thrive in Transition™ model. Guided by the Ideal Life Framework, your coach helps turn what you discovered at the retreat into a real, actionable plan, and holds you accountable to it.</p></li>
   <li><h3>Community</h3><p>Six months of coaching builds momentum. What comes next is meant to sustain it. Veterans join the Freedom Ranch alumni community, staying connected to their cohort, their coach, and a growing network of mentors and supporters who understand exactly what this journey takes.</p></li>
 </ol>
-<div class="callout"><h3>Accountability from day one</h3><p>Freedom Ranch is donor-funded, so veterans who complete the program bear no cost, only the commitment to follow through. To enter, participants pay a small, fully refundable commitment fee, returned in full once you complete the six-month coaching journey. It’s a small step, but an important one: this program works best when veterans show up not just for the retreat, but for the follow-through after it. That fee is our way of asking for the same commitment we’re making to you.</p></div>
+<div class="callout"><h3>Accountability from day one</h3><p>Freedom Ranch is donor-funded, so veterans who complete the program bear no cost, only the commitment to follow through. Once accepted, participants pay a $500 accountability deposit, refunded in full when you complete the six-month coaching program. It’s an important step: this program works best when veterans show up not just for the retreat, but for the follow-through after it. That deposit is our way of asking for the same commitment we’re making to you.</p></div>
 <p style="font-family:var(--serif);font-size:1.35rem">Four steps. One mission: helping you move from where the military left off to where you choose to go next.</p>
 ${tagline()}`,
 })}
