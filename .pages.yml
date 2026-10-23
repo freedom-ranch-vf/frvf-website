@@ -62,7 +62,9 @@ content:
         label: Type
         type: select
         options: { values: [Community, Fundraiser, Retreat, Volunteer] }
+      - { name: display, label: Date text override (e.g. March 2027, use when exact days are not set), type: string }
       - { name: link, label: Link for more details (optional), type: string }
+      - { name: linkLabel, label: Button text (optional, e.g. Apply now), type: string }
       - { name: body, label: Description, type: rich-text }
 
   - name: articles

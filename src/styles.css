@@ -358,3 +358,15 @@ button.video-thumb:hover .play { transform: scale(1.08); }
 .page-hero .eyebrow { color: var(--brass-l); }
 .hero-rose { color: var(--brass-l); opacity: 0.13; --compass-hub: var(--navy-deep); }
 .page-hero a { color: var(--brass-l); }
+
+/* events list */
+.events-list { display: grid; gap: 1.1rem; }
+.event-card { display: grid; grid-template-columns: 5.2rem 1fr; gap: 1.4rem; background: #fff; border: 1px solid var(--line); border-radius: var(--r); padding: 1.4rem; align-items: start; }
+.event-date { background: var(--navy-deep); color: var(--cream); text-align: center; padding: 0.7rem 0.3rem; border-radius: 2px; line-height: 1; }
+.event-date .m { display: block; font: 700 0.78rem var(--sans); letter-spacing: 0.16em; text-transform: uppercase; color: var(--brass-l); margin-bottom: 0.35rem; }
+.event-date .d { display: block; font: 700 1.7rem var(--serif); }
+.event-card .meta { font: 700 0.74rem var(--sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--clay-d); margin-bottom: 0.5rem; }
+.event-card h3 { margin: 0 0 0.4rem; }
+.event-card p { margin: 0 0 0.6rem; }
+.event-actions { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin: 0.9rem 0 0 !important; }
+@media (max-width: 520px) { .event-card { grid-template-columns: 1fr; } .event-date { width: 5rem; } }

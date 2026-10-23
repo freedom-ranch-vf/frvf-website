@@ -193,13 +193,24 @@ ${section({
       const past = all.filter((e) => end(e) < today).sort((a, b) => (a.date < b.date ? 1 : -1));
       const fmt = (iso) => new Date(iso + 'T12:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
       const when = (e) => (e.endDate && e.endDate !== e.date ? `${fmt(e.date)} to ${fmt(e.endDate)}` : fmt(e.date));
-      const card = (e) => `<article class="article-card"><p class="meta">${esc(e.category || 'Event')} &middot; ${when(e)}</p><h3>${esc(e.title)}</h3>${e.location ? `<p><strong>${esc(e.location)}</strong></p>` : ''}${e.html}${e.link ? `<a class="more" href="${esc(e.link)}" rel="noopener">More details <span aria-hidden="true">&rarr;</span></a>` : ''}</article>`;
+      const ymd = (iso) => iso.replace(/-/g, '');
+      const plusDay = (iso) => { const d = new Date(iso + 'T12:00:00Z'); d.setUTCDate(d.getUTCDate() + 1); return d.toISOString().slice(0, 10); };
+      const gcal = (e) => `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(e.title)}&dates=${ymd(e.date)}/${ymd(plusDay(e.endDate || e.date))}&location=${encodeURIComponent(e.location || '')}`;
+      const block = (e) => {
+        const d = new Date(e.date + 'T12:00:00');
+        const mon = d.toLocaleDateString('en-US', { month: 'short' });
+        const yr = d.getFullYear();
+        return e.display
+          ? `<div class="event-date"><span class="m">${esc(e.display.split(' ')[0].slice(0, 3))}</span><span class="d">${yr}</span></div>`
+          : `<div class="event-date"><span class="m">${mon}</span><span class="d">${d.getDate()}</span></div>`;
+      };
+      const card = (e) => `<article class="event-card">${block(e)}<div class="event-body"><p class="meta">${esc(e.category || 'Event')} &middot; ${e.display ? esc(e.display) : when(e)}</p><h3>${esc(e.title)}</h3>${e.location ? `<p><strong>${esc(e.location)}</strong></p>` : ''}${e.html}<p class="event-actions">${e.link ? `<a class="btn btn-${e.link.startsWith('/') ? 'primary' : 'ink'}" href="${esc(e.link)}"${e.link.startsWith('/') ? '' : ' rel="noopener"'}>${esc(e.linkLabel || 'More details')}</a>` : ''}${e.display ? '' : `<a class="more" href="${gcal(e)}" rel="noopener" target="_blank">Add to calendar</a>`}</p></div></article>`;
       const cal = site.eventsEmbed
         ? `<iframe class="embed-frame" src="${site.eventsEmbed}" title="Upcoming events calendar" loading="lazy"></iframe>`
         : upcoming.length
-          ? `<div class="articles">${upcoming.map(card).join('')}</div>`
+          ? `<div class="events-list">${upcoming.map(card).join('')}</div>`
           : `<div class="placeholder-box"><p>No events are posted right now. Check back soon, or reach out if you’d like to host one.</p></div>`;
-      const pastHtml = past.length ? section({ cls: 'sand', eyebrow: 'Past Events', title: 'Recaps', body: `<div class="articles">${past.map(card).join('')}</div>` }) : '';
+      const pastHtml = past.length ? section({ cls: 'sand', eyebrow: 'Past Events', title: 'Recaps', body: `<div class="events-list">${past.map(card).join('')}</div>` }) : '';
       return `${pageHero({
         eyebrow: 'Upcoming and Past Events',
         title: 'Events',
