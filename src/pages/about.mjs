@@ -69,12 +69,13 @@ ${section({
 ${section({
   id: 'story',
   eyebrow: 'Our Story',
-  title: 'Freedom Ranch started with an idea Matt Beaghley couldn’t shake.',
+  title: 'Freedom Ranch is the program Povas wishes he’d had.',
   narrow: true,
   body: prose(`
-<p>Matt spent 20 years in the Navy, first as an enlisted sailor and then as an officer. A Naval Flight Officer and TOPGUN graduate, he flew the E-2C Hawkeye as a strike lead and mission commander. Late in his career he managed the contract for the Navy’s Flag Officer transition program and saw that even senior admirals, with high-level executive coaching, struggled with the same questions of identity and purpose as junior sailors walking out the door. If they couldn’t transition cleanly, the standard checklist wasn’t close to enough.</p>
-<p>Matt found language for what he’d been seeing in Mark Congdon’s book, <em>The Ideal Life</em>, and its “I GOT This” framework for turning stress into purpose, and he connected with Congdon’s coaching program, Thrive in Transition. What was still missing was the environment: a place removed from ordinary life where a veteran could slow down long enough to ask who they wanted to become next.</p>
-<p>Povas Miknaitis knew what it means to rebuild. A Marine Corps Scout Sniper, he was seriously wounded in combat and recovered at Balboa Naval Medical Center. In 2009 he met Sandy Lehmkuhler when her organization flew wounded warriors home for the holidays. That connection outlasted his hospital stay by more than a decade, and when Matt and Povas began building Freedom Ranch, Sandy was the natural third partner.</p>
+<p>Povas Miknaitis knows what it takes to rebuild. A Marine Corps Scout Sniper, he was seriously wounded in combat and recovered at Balboa Naval Medical Center. When he finally got out, he found a system built to process paperwork, not to help a person figure out who to become next. He still says he wishes he’d had this program and this coaching on the day he left.</p>
+<p>Matt Beaghley saw the same gap from the other side. He spent 20 years in the Navy, first as an enlisted sailor and then as an officer, a Naval Flight Officer and TOPGUN graduate who flew the E-2C Hawkeye as a strike lead and mission commander. Late in his career he managed the contract for the Navy’s Flag Officer transition program, and he watched senior admirals, with high-level executive coaching, wrestle with the same questions of identity and purpose as the junior sailors walking out the door. If they couldn’t transition cleanly, the standard checklist wasn’t close to enough.</p>
+<p>Matt found language for what he’d been seeing in Mark Congdon’s book, <em>The Ideal Life</em>, and its “I GOT This” framework for turning stress into purpose, and he connected with Congdon’s coaching program, Thrive in Transition. The framework was there. What was still missing was the place: somewhere removed from ordinary life where a veteran could slow down long enough to ask who they wanted to become.</p>
+<p>So Matt and Povas set out to build it. Sandy Lehmkuhler was the natural third partner. She met Povas in 2009, when her organization flew wounded warriors home for the holidays, and that connection outlasted his hospital stay by more than a decade.</p>
 <p class="pull">Veterans don’t need another checklist. They need distance from the noise, a framework for turning hard change into real purpose, and people who understand the road well enough to walk it with them.</p>`),
 })}
 ${ctaBand({ title: 'Meet the people behind it.', actions: btn('Meet Our Team', '/about/team') })}`;
