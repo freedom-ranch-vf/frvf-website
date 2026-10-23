@@ -128,8 +128,8 @@ ${ctaBand({ title: 'How we steward every dollar.', actions: btn('Financial Trans
       return `${pageHero({ eyebrow: 'Trust and Stewardship', title: 'Financial Transparency' })}
 ${section({
   narrow: true,
-  body: `${prose(`<p>Freedom Ranch Veterans Foundation is a 501(c)(3) public charity, EIN 39-4244309. The IRS recognized our tax-exempt status effective September 23, 2025, and contributions are tax-deductible to the extent allowed by law.</p><p>Every donor deserves to know how their gift is used. We file our annual returns with the IRS and the State of California, and we will post each filing here along with a clear breakdown of how funds are spent on programs, coaching, and operations.</p>`)}
-  <div class="actions">${docLink('View our most recent IRS filing', docs.form990)}${docLink('View program spending breakdown', docs.spendingBreakdown)}</div>`,
+  body: `${prose(`<p>Freedom Ranch Veterans Foundation is a 501(c)(3) public charity, EIN 39-4244309. The IRS recognized our tax-exempt status effective September 23, 2025, and contributions are tax-deductible to the extent allowed by law.</p><p>Every donor deserves to know how their gift is used. We file our annual returns with the IRS and the State of California, and we will post each filing here along with a clear breakdown of how funds are spent on programs, coaching, and operations.</p><p>Mailing address: ${site.address.street}, ${site.address.city}, ${site.address.region} ${site.address.zip}.</p>`)}
+  <div class="actions">${btn('IRS determination letter', '/docs/FRVF-IRS-Determination-Letter.pdf', 'ink')}${docLink('2025 IRS filing (Form 990-N)', docs.form990)}${docLink('View program spending breakdown', docs.spendingBreakdown)}</div>`,
 })}
 ${section({
   id: 'annual-reports',

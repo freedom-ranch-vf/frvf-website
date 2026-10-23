@@ -7,7 +7,7 @@ const faqs = [
   ['What happens after the retreat?', 'Every veteran continues into six months of one-on-one coaching, beginning on-site and continuing virtually, followed by ongoing access to the Freedom Ranch alumni community.'],
   ['Can spouses or family members attend the retreat?', 'Yes, for select retreats. Freedom Ranch offers both family retreats, where spouses and children are welcome to attend, and retreats designed specifically for single veterans. When you apply, you’ll be matched to the retreat format that fits your situation.'],
   ['How are cohorts selected?', 'Cohorts are grouped primarily by age rather than rank or role, since we’ve found veterans connect more naturally, and open up more honestly, with others navigating a similar life stage. Rank doesn’t factor into cohort placement at all.'],
-  ['When and where is the first retreat?', 'Our first retreat is planned for March 2027 at Native Falls in Temecula, California. Future retreats will be held on private estates across Southern California.'],
+  ['When and where is the first retreat?', 'Our first retreat is planned for March 2027 at Native Falls in Temecula, California. We are also planning retreats at VenueTen in Coachella, with more private estates across Southern California to follow.'],
   ['What if I don’t complete the program?', 'The $500 accountability deposit is designed to reflect real follow-through. If a veteran withdraws from the program, the deposit is forfeited. That said, we understand life happens: extenuating circumstances, like a medical or family emergency, are reviewed individually, and we’ll work with veterans to find a way to reaccommodate them wherever possible.'],
 ];
 
@@ -87,7 +87,7 @@ ${ctaBand({ title: 'Ready to take the first step?', actions: btn('Apply Now', '/
 ${section({
   narrow: true,
   body: prose(`
-<p>Our first retreat is planned for March 2027 at Native Falls in Temecula, California. Every Freedom Ranch retreat takes place on a large private estate, chosen specifically because it offers veterans something a conference center or hotel never could: real space, real privacy, and real distance from the noise of daily life.</p>
+<p>Our first retreat is planned for March 2027 at Native Falls in Temecula, California, with retreats at VenueTen in Coachella also planned. Every Freedom Ranch retreat takes place on a large private estate, chosen specifically because it offers veterans something a conference center or hotel never could: real space, real privacy, and real distance from the noise of daily life.</p>
 <p>Our venue partners are veteran supporters who open their properties because they believe in this mission. Our estates offer private tennis courts, resort-style pools and spas, and on-site accommodations built for a small group to stay together throughout the retreat. Depending on the estate, veterans may have access to golf, pickleball, tennis, and other recreational amenities alongside the structured retreat schedule, giving cohorts a natural way to unwind, connect, and compete together between sessions.</p>
 <p>This isn’t incidental. Recreation built into the retreat gives veterans an easy, low-pressure way to bond with fellow cohort members, the same kind of shared activity and friendly competition many remember from service, now redirected toward building new relationships in a new chapter.</p>`),
 })}

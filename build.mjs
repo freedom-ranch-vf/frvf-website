@@ -67,6 +67,9 @@ fs.writeFileSync(
 const imgSrc = path.join(src, 'assets', 'img');
 if (fs.existsSync(imgSrc)) fs.cpSync(imgSrc, path.join(dist, 'img'), { recursive: true });
 
+const docsSrc = path.join(src, 'assets', 'docs');
+if (fs.existsSync(docsSrc)) fs.cpSync(docsSrc, path.join(dist, 'docs'), { recursive: true });
+
 // SEO + hosting files
 const today = new Date().toISOString().slice(0, 10);
 fs.writeFileSync(
