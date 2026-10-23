@@ -58,10 +58,11 @@ ${section({
 
 ${section({
   id: 'stories',
+  cls: 'ink',
   eyebrow: 'Stories',
   title: 'Every Veteran Has a Story. The Next Chapter Is Still Being Written.',
   intro: `<p>Every veteran arrives at Freedom Ranch with different experiences, different goals, and a different vision for what comes next.</p><p>As our veterans complete Freedom Ranch retreats and continue through professional coaching, we will share their experiences and stories here in their own words.</p>`,
-  body: `<div class="videos">${videos.map(videoCard).join('')}</div><div class="actions">${btn('Watch Our Story', '/stories', 'ink')}</div>`,
+  body: `<div class="videos">${videos.map(videoCard).join('')}</div><div class="actions">${btn('Watch Our Story', '/stories', 'primary')}</div>`,
 })}
 
 ${section({

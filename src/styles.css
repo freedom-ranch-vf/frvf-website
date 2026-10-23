@@ -4,6 +4,7 @@
 :root {
   --blue: #3158a3;
   --ink: #1d3563;
+  --navy-deep: #0d2146;
   --ink-2: #284878;
   --sand: #dcd8ca;
   --sand-2: #cfc9b6;
@@ -141,7 +142,9 @@ ul { padding-left: 1.2em; }
 /* ---------- sections ---------- */
 .section { padding: clamp(3rem, 7vw, 5.5rem) 0; }
 .section.sand { background: var(--sand); }
-.section.ink { background: var(--ink); color: var(--sand); }
+.section.ink { background: var(--navy-deep); color: var(--sand); }
+.section.ink h2, .section.ink h3 { color: var(--cream); }
+.section.ink .card h3 { color: var(--ink); }
 .section.ink .eyebrow { color: var(--brass-l); }
 .section.ink .intro p { color: rgba(243, 234, 215, 0.8); }
 .section.ink a { color: var(--brass-l); }
@@ -341,3 +344,7 @@ button.video-thumb:hover .play { transform: scale(1.08); }
 .field.check .check-label { display: flex; gap: 0.7rem; align-items: flex-start; font-weight: 500; line-height: 1.45; cursor: pointer; }
 .field.check input[type="checkbox"] { width: 1.3rem; height: 1.3rem; flex: none; margin-top: 0.15rem; accent-color: var(--clay); }
 .field.check input.invalid { outline: 3px solid #a32020; }
+
+/* deeper navy for contrast bands */
+.cta-band, .topo-light { background-color: var(--navy-deep); }
+.site-footer { background: var(--navy-deep); }
