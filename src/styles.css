@@ -5,6 +5,7 @@
   --blue: #3158a3;
   --ink: #1d3563;
   --navy-deep: #0d2146;
+  --mist: #e6edf7;
   --ink-2: #284878;
   --sand: #dcd8ca;
   --sand-2: #cfc9b6;
@@ -119,7 +120,7 @@ ul { padding-left: 1.2em; }
 }
 
 /* ---------- texture helpers ---------- */
-.topo-dark { background-color: var(--sand); background-image: url('/img/topo-dark.svg'); background-size: cover; background-position: center; }
+.topo-dark { background-color: var(--mist); background-image: url('/img/topo-dark.svg'); background-size: cover; background-position: center; }
 .topo-light { background-color: var(--ink); background-image: url('/img/topo-light.svg'); background-size: cover; background-position: center; color: var(--sand); }
 
 /* ---------- hero (home) ---------- */
@@ -141,7 +142,7 @@ ul { padding-left: 1.2em; }
 
 /* ---------- sections ---------- */
 .section { padding: clamp(3rem, 7vw, 5.5rem) 0; }
-.section.sand { background: var(--sand); }
+.section.sand { background: var(--mist); }
 .section.ink { background: var(--navy-deep); color: var(--sand); }
 .section.ink h2, .section.ink h3 { color: var(--cream); }
 .section.ink .card h3 { color: var(--ink); }
@@ -164,7 +165,8 @@ ul { padding-left: 1.2em; }
 .card { background: #fff; border: 1px solid var(--line); border-radius: var(--r); padding: 1.6rem; display: flex; flex-direction: column; }
 .card p { color: var(--muted); }
 .card .more { margin-top: auto; font-weight: 600; text-decoration: none; padding-top: 0.5rem; }
-.sand .card, .ink .card { background: var(--cream); color: var(--ink); border-color: transparent; }
+.sand .card { background: #fff; color: var(--ink); border-color: rgba(49, 88, 163, 0.14); }
+.ink .card { background: var(--cream); color: var(--ink); border-color: transparent; }
 .ink .card h3 { color: var(--ink); }
 .ink .card a { color: var(--clay-d); }
 .card.bearing { position: relative; padding-top: 2.3rem; }
