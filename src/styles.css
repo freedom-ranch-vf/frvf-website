@@ -350,3 +350,11 @@ button.video-thumb:hover .play { transform: scale(1.08); }
 /* deeper navy for contrast bands */
 .cta-band, .topo-light { background-color: var(--navy-deep); }
 .site-footer { background: var(--navy-deep); }
+
+/* inner page headers: deep navy */
+.page-hero { color: var(--sand); border-bottom: 0; }
+.page-hero h1 { color: var(--cream); }
+.page-hero .lede { color: rgba(243, 234, 215, 0.88); }
+.page-hero .eyebrow { color: var(--brass-l); }
+.hero-rose { color: var(--brass-l); opacity: 0.13; --compass-hub: var(--navy-deep); }
+.page-hero a { color: var(--brass-l); }

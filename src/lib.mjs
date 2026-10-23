@@ -59,7 +59,7 @@ export const eyebrow = (t) => `<p class="eyebrow">${t}</p>`;
 export const tagline = () => `<p class="tagline">REST. REFRESH. REBUILD.</p>`;
 
 export function pageHero({ eyebrow: eb, title, lede = '', actions = '' }) {
-  return `<section class="page-hero topo-dark">
+  return `<section class="page-hero topo-light">
   ${compassSvg('hero-rose')}
   <div class="wrap">
     ${eb ? eyebrow(eb) : ''}
