@@ -192,7 +192,7 @@ function header() {
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
     <nav id="primary-nav" class="primary-nav" aria-label="Primary">
       <ul>${items}</ul>
-      ${btn('Donate', site.donateUrl, 'brass')}
+      ${btn('Donate', site.donateUrl, 'primary')}
     </nav>
   </div>
 </header>`;
