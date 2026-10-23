@@ -47,6 +47,42 @@
       "home": false,
       "show": true,
       "url": ""
+    },
+    {
+      "name": "Newman Windows",
+      "home": true,
+      "show": true,
+      "url": ""
+    },
+    {
+      "name": "Coronado Rotary",
+      "home": true,
+      "show": true,
+      "url": ""
+    },
+    {
+      "name": "Mor Furniture",
+      "home": true,
+      "show": true,
+      "url": ""
+    },
+    {
+      "name": "SCPC",
+      "home": false,
+      "show": true,
+      "url": ""
+    },
+    {
+      "name": "POV Enterprises",
+      "home": false,
+      "show": true,
+      "url": ""
+    },
+    {
+      "name": "D.R. Horton",
+      "home": false,
+      "show": true,
+      "url": ""
     }
   ]
 }

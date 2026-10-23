@@ -134,13 +134,15 @@ export function videoCard(v) {
 
 export function supporters({ homeOnly = false } = {}) {
   const list = partners.filter((p) => p.show && (!homeOnly || p.home));
-  return `<ul class="supporters">${list
+  const cells = list
     .map((p) => {
       const logo = findImg(`partners/${slugify(p.name)}`);
-      const inner = logo ? `<img src="${logo}" alt="${esc(p.name)}" loading="lazy">` : `<span class="chip">${esc(p.name)}</span>`;
+      const inner = logo ? `<img src="${logo}" alt="${esc(p.name)}" loading="lazy">` : `<span class="name">${esc(p.name)}</span>`;
       return `<li>${p.url ? `<a href="${esc(p.url)}" rel="noopener" target="_blank">${inner}</a>` : inner}</li>`;
     })
-    .join('')}</ul>`;
+    .join('');
+  const tile = `<li class="join"><a href="/contact?topic=partnership"><strong>Your company here</strong><span>Become a partner</span></a></li>`;
+  return `<ul class="supporters">${cells}${tile}</ul>`;
 }
 
 /* ---------- forms ---------- */
