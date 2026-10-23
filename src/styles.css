@@ -316,3 +316,20 @@ button.video-thumb:hover .play { transform: scale(1.08); }
 .socials { display: flex; gap: 0.9rem; list-style: none; padding: 0; margin: 1.6rem 0 0; }
 .socials a { display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid rgba(243, 234, 215, 0.35); border-radius: 50%; color: var(--sand); }
 .socials a:hover { background: var(--brass-l); color: var(--ink); border-color: var(--brass-l); text-decoration: none; }
+
+/* ---------- compass watermarks ---------- */
+.page-hero { position: relative; overflow: hidden; }
+.page-hero .wrap { position: relative; z-index: 2; }
+.hero-rose { position: absolute; right: -110px; top: 50%; transform: translateY(-50%); width: min(520px, 70vw); color: var(--blue, #3158A3); opacity: 0.13; --compass-hub: var(--sand); z-index: 1; pointer-events: none; }
+.cta-band { position: relative; overflow: hidden; }
+.cta-band .wrap { position: relative; z-index: 2; }
+.cta-rose { position: absolute; top: 50%; width: min(380px, 60vw); color: var(--brass-l); opacity: 0.12; --compass-hub: var(--ink); z-index: 1; pointer-events: none; }
+.cta-rose-l { left: -140px; transform: translateY(-50%) rotate(-14deg); }
+.cta-rose-r { right: -140px; transform: translateY(-50%) rotate(14deg); }
+@media (max-width: 760px) { .cta-rose-l { display: none; } }
+.section.sand { position: relative; overflow: hidden; }
+.section.sand::before { content: ''; position: absolute; right: -130px; bottom: -150px; width: 480px; height: 480px; background: url('/img/compass-navy.png') center / contain no-repeat; opacity: 0.06; pointer-events: none; }
+.section.sand > .wrap { position: relative; z-index: 1; }
+.site-footer { position: relative; overflow: hidden; }
+.site-footer::before { content: ''; position: absolute; right: -120px; top: -60px; width: 420px; height: 420px; background: url('/img/compass-white.png') center / contain no-repeat; opacity: 0.05; pointer-events: none; }
+.site-footer .wrap { position: relative; z-index: 1; }

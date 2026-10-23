@@ -60,6 +60,7 @@ export const tagline = () => `<p class="tagline">REST. REFRESH. REBUILD.</p>`;
 
 export function pageHero({ eyebrow: eb, title, lede = '', actions = '' }) {
   return `<section class="page-hero topo-dark">
+  ${compassSvg('hero-rose')}
   <div class="wrap">
     ${eb ? eyebrow(eb) : ''}
     <h1>${title}</h1>
@@ -84,6 +85,7 @@ export const prose = (html) => `<div class="prose">${html}</div>`;
 
 export function ctaBand({ title, text = '', actions }) {
   return `<section class="cta-band topo-light">
+  ${compassSvg('cta-rose cta-rose-l')}${compassSvg('cta-rose cta-rose-r')}
   <div class="wrap">
     <h2>${title}</h2>
     ${text ? `<p>${text}</p>` : ''}
