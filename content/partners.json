@@ -39,13 +39,13 @@
     {
       "name": "Doyle Foundation",
       "home": true,
-      "show": false,
+      "show": true,
       "url": ""
     },
     {
       "name": "Lilikoi Agency",
       "home": false,
-      "show": false,
+      "show": true,
       "url": ""
     }
   ]

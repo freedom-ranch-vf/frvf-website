@@ -73,7 +73,7 @@ ${section({
 ${section({
   id: 'story',
   eyebrow: 'Our Story',
-  title: 'It started with an idea Matt Beaghley couldn’t shake.',
+  title: 'Freedom Ranch Veterans Foundation started with an idea Matt Beaghley couldn’t shake.',
   narrow: true,
   body: prose(`
 <p>Matt spent 20 years in the Navy, first as an enlisted sailor, then as a commissioned officer, a path that gave him a rare view of military life from both sides of the chain of command. As a Naval Flight Officer, he flew the E-2C Hawkeye, serving as a strike lead and mission commander, and earned his place as a graduate of the Navy’s TOPGUN program. Over two decades of service, he watched veteran after veteran hit the same wall on their way out: the military prepares people to leave in almost every way except the ones that matter most. Late in his career, Matt managed the contract for the Navy’s Flag Officer transition program, giving him a front-row seat to something telling: even senior admirals, backed by high-level executive coaching, struggled with the same unresolved questions of identity and purpose as junior sailors walking out the door. If the most experienced leaders in the Navy couldn’t transition cleanly with elite coaching behind them, Matt knew the standard checklist most veterans received wasn’t close to enough.</p>
