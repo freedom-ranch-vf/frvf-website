@@ -50,3 +50,9 @@
   from = "/programs/community"
   to = "/programs#community"
   status = 301
+
+[[redirects]]
+  from = "/stories"
+  to = "/resources"
+  status = 301
+  force = true

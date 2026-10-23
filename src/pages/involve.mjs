@@ -44,7 +44,7 @@ const applyFields = [
     options: ['Single-veteran retreat', 'Family retreat (spouse and children)', 'Not sure yet'],
     hint: 'We will confirm the right fit with you when we follow up.',
   }),
-  field({ name: 'travel', label: 'Can you travel to the Coachella Valley or San Diego County? Any dates you cannot do?', type: 'textarea', rows: 3 }),
+  field({ name: 'travel', label: 'Can you travel to Temecula, CA for the March 2027 retreat? Any dates you cannot do?', type: 'textarea', rows: 3 }),
   field({
     name: 'how_heard', label: 'How did you hear about Freedom Ranch?',
     options: ['A friend or fellow veteran', 'Social media', 'A veteran organization', 'An event', 'Online search', 'Other'],
@@ -180,24 +180,6 @@ ${section({
     },
   },
 
-  {
-    path: '/stories',
-    title: 'Veteran Stories',
-    desc: 'Watch the Freedom Ranch story, and as alumni move through the retreat and coaching, hear from veterans in their own words.',
-    render() {
-      return `${pageHero({
-        eyebrow: 'Testimonials and Videos',
-        title: 'Every veteran arrives with a different story.',
-        lede: 'As our alumni move through the retreat and coaching, we’ll share their experiences here, in their own words.',
-      })}
-${section({
-  eyebrow: 'Featured Videos',
-  title: 'Watch our story',
-  body: `<div class="videos">${videos.map(videoCard).join('')}</div>`,
-})}
-${ctaBand({ title: 'Help write the next story.', actions: btn('Support a Veteran’s Story', site.donateUrl) })}`;
-    },
-  },
 
   {
     path: '/events',

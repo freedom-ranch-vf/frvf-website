@@ -2,12 +2,12 @@ import { site, docs } from '../data/site.mjs';
 import { btn, ctaBand, cards, section, pageHero, prose, portrait, tagline, eyebrow } from '../lib.mjs';
 
 const values = [
-  ['We believe transition is more than a checklist', 'A resume workshop and a final medical exam do not prepare someone to walk away from a military identity. We build a real process for the deeper work that follows.'],
-  ['We believe stress can be a catalyst, not just a cost', 'Guided by the Ideal Life Framework, we help veterans convert the discomfort of transition into clarity, purpose, and forward motion, rather than something to simply endure.'],
-  ['We believe distance creates clarity', 'Real reflection rarely happens in the middle of daily noise. Our retreats take place on ranch estates, away from the city, so veterans can finally hear themselves think.'],
-  ['We believe no veteran should walk it alone', 'Every veteran at Freedom Ranch meets others walking the same road, and Thrive in Transition coaches who walk it with them for the six months that follow.'],
-  ['We believe clarity without action is incomplete', 'Reflection is the beginning, not the end. Our coaching model turns insight into a concrete plan, backed by structured accountability.'],
-  ['We believe families transition too', 'The next chapter has to work for more than the veteran alone. Our support considers the whole household.'],
+  ['Transition is more than a checklist', 'A resume workshop and a final medical exam do not prepare someone to leave a military identity. We build a real process for the deeper work.'],
+  ['Stress can be a catalyst', 'We help veterans turn the discomfort of transition into clarity, purpose, and forward motion.'],
+  ['Distance creates clarity', 'Real reflection rarely happens amid daily noise, so our retreats take place away from the city.'],
+  ['No veteran should walk it alone', 'Every veteran meets others on the same road, and coaches who stay with them for six months.'],
+  ['Clarity needs action', 'Reflection is the beginning. Coaching turns insight into a plan, backed by accountability.'],
+  ['Families transition too', 'The next chapter has to work for the whole household, not only the veteran.'],
 ];
 
 const people = [
@@ -49,14 +49,10 @@ export default [
 ${section({
   narrow: true,
   body: prose(`
-<p>Co-founders Matthew Beaghley and Povas Miknaitis both served, and both went through the same transition that veterans face every day: leaving behind a military life that had shaped who they were, and stepping into a civilian world with no clear map for who to become next. They didn’t build Freedom Ranch from the outside looking in. They built it because they’d been through it, and they knew firsthand how little real support exists once the uniform comes off.</p>
-<p>They didn’t build it alone. Joining them as a co-founder is Sandy Lehmkuhler, who brings more than two decades of experience serving veterans and military families, including founding a major nonprofit in the San Diego area supporting combat-wounded veterans after 9/11. That work gave Sandy a front-row seat to what real recovery and support can look like, and it left her certain of one thing: transition isn’t just a challenge for the wounded. It’s a challenge nearly every servicemember faces, whether their wounds are visible or not.</p>
-<p>Together, these three founders saw the same gap from different angles, and set out to close it.</p>
+<p>Co-founders Matthew Beaghley and Povas Miknaitis both served, and both went through the transition every veteran faces: leaving behind a military life that shaped who they were and stepping into a civilian world with no clear map. They built Freedom Ranch because they had been through it. Sandy Lehmkuhler joined them as a co-founder, bringing more than two decades of serving veterans and military families, including founding a San Diego area nonprofit that supported combat-wounded veterans after 9/11.</p>
 <p class="pull">The military is exceptionally good at building people.</p>
-<p>Over the course of a career, it molds identity, instills discipline, and defines purpose down to the smallest detail. What it is not built to do is unmold that person when their service ends. Transition support too often becomes a checklist: a resume workshop, a benefits briefing, a final medical exam. Boxes get checked. But nothing on that checklist addresses the deeper shift a veteran actually has to make: rebuilding an identity, a purpose, and a daily structure that the military spent years building for them.</p>
-<p>That gap is why Freedom Ranch exists, and it’s why our approach looks different from most transition programs.</p>
-<p>Rather than another briefing room or online module, Freedom Ranch brings veterans to ranch estates, away from the noise of the city, everyday obligations, and the pace of civilian life. It’s in that quiet that the real work of transition can start: reconnecting with who you are outside of your job title or rank, meeting other veterans walking the same road, and meeting the coaches who will walk alongside them for the six months that follow. The retreat isn’t the destination. It’s the space where veterans can finally hear themselves think, and where the relationships that carry them through transition begin.</p>
-<p>Together, these three founders built Freedom Ranch around a different definition of support: not a final checklist to close out a service member’s file, but a real process, retreats, coaching, and community, to help veterans move from who the military shaped them to be into who they choose to become next.</p>
+<p>It molds identity, instills discipline, and defines purpose down to the smallest detail. It is not built to unmold that person when service ends. Transition support too often becomes a checklist: a resume workshop, a benefits briefing, a final medical exam. None of it addresses the deeper shift: rebuilding an identity, a purpose, and a daily structure the military spent years building.</p>
+<p>That gap is why Freedom Ranch exists. Instead of another briefing room or online module, we bring veterans to a ranch estate, away from the city and everyday obligations. The retreat isn’t the destination. It’s where veterans can finally hear themselves think, meet others on the same road, and meet the coaches who will walk with them for the next six months.</p>
 ${tagline()}`),
 })}
 ${section({
@@ -64,24 +60,22 @@ ${section({
   cls: 'sand',
   eyebrow: 'Mission',
   title: 'Helping post-9/11 veterans navigate life after service.',
-  intro: '<p>Through restorative retreats, transition coaching, wellness experiences, and lifelong community.</p>',
+  intro: '<p>Through retreats, transition coaching, and lifelong community.</p>',
   body: prose(`
 <p class="pull">The military spends years building a person. It rarely spends more than a few weeks unbuilding one.</p>
-<p>Freedom Ranch Veterans Foundation exists to close that gap. Our mission is to give post-9/11 veterans a real process, not a checklist, for moving from the identity, structure, and purpose the military built into them, toward a civilian life they choose for themselves. We do this through immersive retreats on ranch estates away from the noise of everyday life, six months of professional coaching delivered through our Thrive in Transition™ model, wellness experiences that strengthen body and mind, and a community that stays with veterans long after the retreat ends.</p>
-<p>Our retreats and coaching are guided by the Ideal Life Framework, which treats the stress and uncertainty of transition not as something to push past, but as raw material veterans can use to discover their purpose and rebuild with intention.</p>`) + `<h3 style="margin:2.4rem 0 1.2rem">What we believe</h3>` + cards(values.map(([t, d]) => ({ title: t, text: d })), 'c3'),
+<p>Our mission is to give post-9/11 veterans a real process, not a checklist, for moving from the identity, structure, and purpose the military built into them toward a civilian life they choose for themselves. We do it through a three-day retreat, six months of professional coaching through our Thrive in Transition™ model, and a community that stays with veterans long after the retreat ends.</p>
+<p>Our coaching framework is based on <em>The Ideal Life</em> by Mark Congdon, which treats the stress and uncertainty of transition as raw material for discovering purpose and rebuilding with intention.</p>`) + `<h3 style="margin:2.4rem 0 1.2rem">What we believe</h3>` + cards(values.map(([t, d]) => ({ title: t, text: d })), 'c3'),
 })}
 ${section({
   id: 'story',
   eyebrow: 'Our Story',
-  title: 'Freedom Ranch Veterans Foundation started with an idea Matt Beaghley couldn’t shake.',
+  title: 'Freedom Ranch started with an idea Matt Beaghley couldn’t shake.',
   narrow: true,
   body: prose(`
-<p>Matt spent 20 years in the Navy, first as an enlisted sailor, then as a commissioned officer, a path that gave him a rare view of military life from both sides of the chain of command. As a Naval Flight Officer, he flew the E-2C Hawkeye, serving as a strike lead and mission commander, and earned his place as a graduate of the Navy’s TOPGUN program. Over two decades of service, he watched veteran after veteran hit the same wall on their way out: the military prepares people to leave in almost every way except the ones that matter most. Late in his career, Matt managed the contract for the Navy’s Flag Officer transition program, giving him a front-row seat to something telling: even senior admirals, backed by high-level executive coaching, struggled with the same unresolved questions of identity and purpose as junior sailors walking out the door. If the most experienced leaders in the Navy couldn’t transition cleanly with elite coaching behind them, Matt knew the standard checklist most veterans received wasn’t close to enough.</p>
-<p>Matt found language for what he’d been seeing in Mark Congdon’s book, <em>The Ideal Life</em>, and its “I GOT This” framework for turning stress into purpose. He recognized immediately how directly it could apply to the transition every servicemember eventually faces, and connected with Congdon’s coaching program, Thrive in Transition, already putting that framework to work. What was still missing was the environment: a place removed from ordinary life, where a veteran could actually slow down long enough to ask who they wanted to become next.</p>
-<p>Matt didn’t have to look far to find a co-founder who understood that need firsthand. Povas Miknaitis knows what it means to rebuild a life from the ground up. A Marine Corps Scout Sniper, Povas deployed to Iraq in 2008 and Afghanistan in 2009, where he was seriously wounded by an IED during a combat operation. He returned home a Purple Heart recipient, and spent the next stretch of his life in recovery at Balboa Naval Medical Center, then went back to school, and worked to find his footing in a civilian world that looked nothing like the one he’d left.</p>
-<p>It was during that recovery, in 2009, that Povas first met Sandy Lehmkuhler, a nonprofit founder dedicated to supporting wounded veterans, when her organization flew wounded warriors home for the holidays. That connection outlasted his hospital stay by more than a decade. When Matt and Povas began building what would become Freedom Ranch, Sandy was a natural partner: someone who had already spent twenty years watching veterans fight to rebuild their lives after service, wounded or not.</p>
-<p class="pull">Veterans don’t need another checklist. They need distance from the noise, a framework for turning hard change into real purpose, and people who understand the road well enough to walk it with them.</p>
-<p>Together, the three of them built Freedom Ranch around what each of them already knew from experience.</p>`),
+<p>Matt spent 20 years in the Navy, first as an enlisted sailor and then as an officer. A Naval Flight Officer and TOPGUN graduate, he flew the E-2C Hawkeye as a strike lead and mission commander. Late in his career he managed the contract for the Navy’s Flag Officer transition program and saw that even senior admirals, with high-level executive coaching, struggled with the same questions of identity and purpose as junior sailors walking out the door. If they couldn’t transition cleanly, the standard checklist wasn’t close to enough.</p>
+<p>Matt found language for what he’d been seeing in Mark Congdon’s book, <em>The Ideal Life</em>, and its “I GOT This” framework for turning stress into purpose, and he connected with Congdon’s coaching program, Thrive in Transition. What was still missing was the environment: a place removed from ordinary life where a veteran could slow down long enough to ask who they wanted to become next.</p>
+<p>Povas Miknaitis knew what it means to rebuild. A Marine Corps Scout Sniper, he was seriously wounded in combat and recovered at Balboa Naval Medical Center. In 2009 he met Sandy Lehmkuhler when her organization flew wounded warriors home for the holidays. That connection outlasted his hospital stay by more than a decade, and when Matt and Povas began building Freedom Ranch, Sandy was the natural third partner.</p>
+<p class="pull">Veterans don’t need another checklist. They need distance from the noise, a framework for turning hard change into real purpose, and people who understand the road well enough to walk it with them.</p>`),
 })}
 ${ctaBand({ title: 'Meet the people behind it.', actions: btn('Meet Our Team', '/about/team') })}`;
     },
@@ -107,7 +101,7 @@ ${section({
       <p>Back in 2004, as a Navy wife, Sandy watched the needs of injured troops go unmet in ways that struck her as simply unacceptable. So she did something about it, founding a nonprofit dedicated to supporting ill and injured warriors during their recovery and transition. What began with quality-of-life support grew into something more ambitious: a transitional housing model built on a simple insight, that veterans succeed best when they start acclimating to civilian life before their discharge, not after, with the guidance and time to relearn how to manage a life the military once managed for them.</p>
       <p>Two decades later, that insight has touched thousands of warriors and their families. But for Sandy, the work was never really about a single organization. It was about a truth she kept encountering again and again: the hardest part of service often isn’t the wound. It’s what comes after, when a servicemember has to rebuild an identity, a routine, and a sense of purpose almost entirely from scratch.</p>
       <p>As the spouse of a veteran, the mother of a veteran, and the mother-in-law of two veterans, the military community isn’t a cause Sandy stepped into. It’s her family.</p>
-      <p>Freedom Ranch is the next chapter in that lifelong commitment, built alongside co-founders Matt Beaghley and Povas Miknaitis to reach every veteran facing that transition, not only the wounded, with the same rest, structure, and community Sandy has spent her life fighting to provide.</p></div></div>`,
+      <p>Freedom Ranch is the next chapter in that lifelong commitment, built alongside co-founders Matt Beaghley and Povas Miknaitis to reach post-9/11 veterans facing that transition, not only the wounded, with the same rest, structure, and community Sandy has spent her life fighting to provide.</p></div></div>`,
 })}
 ${section({
   id: 'board',
@@ -134,8 +128,8 @@ ${ctaBand({ title: 'How we steward every dollar.', actions: btn('Financial Trans
       return `${pageHero({ eyebrow: 'Trust and Stewardship', title: 'Financial Transparency' })}
 ${section({
   narrow: true,
-  body: `${prose(`<p>Every donor deserves to know exactly how their gift is used. Freedom Ranch is committed to full financial transparency, publishing our IRS Form 990 and a clear breakdown of how funds are allocated across programs, coaching, and operations. As a donor-supported nonprofit, we hold ourselves to the highest standard of stewardship, because trust is earned one honest dollar at a time.</p>`)}
-  <div class="actions">${docLink('View our most recent Form 990', docs.form990)}${docLink('View program spending breakdown', docs.spendingBreakdown)}</div>`,
+  body: `${prose(`<p>Freedom Ranch Veterans Foundation is a 501(c)(3) public charity, EIN 39-4244309. The IRS recognized our tax-exempt status effective September 23, 2025, and contributions are tax-deductible to the extent allowed by law.</p><p>Every donor deserves to know how their gift is used. We file our annual returns with the IRS and the State of California, and we will post each filing here along with a clear breakdown of how funds are spent on programs, coaching, and operations.</p>`)}
+  <div class="actions">${docLink('View our most recent IRS filing', docs.form990)}${docLink('View program spending breakdown', docs.spendingBreakdown)}</div>`,
 })}
 ${section({
   id: 'annual-reports',

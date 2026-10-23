@@ -63,7 +63,6 @@ export const nav = [
       ['Volunteer & Sponsor', '/get-involved'],
       ['Corporate Partners', '/partners'],
       ['Events', '/events'],
-      ['Veteran Stories', '/stories'],
       ['Freedom Shave Club', '/shave-club'],
     ],
   },

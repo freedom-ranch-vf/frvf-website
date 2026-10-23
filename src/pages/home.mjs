@@ -1,6 +1,6 @@
-import { site, videos } from '../data/site.mjs';
+import { site } from '../data/site.mjs';
 import { articles, articleIntro, fmtDate } from '../data/articles.mjs';
-import { btn, compassSvg, ctaBand, cards, section, eyebrow, portrait, videoCard, supporters, findImg, tagline } from '../lib.mjs';
+import { btn, compassSvg, ctaBand, cards, section, eyebrow, portrait, supporters, findImg, tagline } from '../lib.mjs';
 
 const challenge = [
   ['Identity', 'Military service can become a major part of how you see yourself. Transition creates an opportunity to rediscover who you are and who you want to become next.'],
@@ -32,7 +32,7 @@ export default [
   <div class="wrap">
     ${eyebrow('Rest. Refresh. Rebuild.')}
     <h1>No Veteran Should Have to Navigate the Next Chapter Alone.</h1>
-    <p class="lede">Freedom Ranch Veterans Foundation helps veterans step away from the noise, reconnect with purpose, and build what comes next through immersive retreats, professional coaching, and a lasting community of support.</p>
+    <p class="lede">Freedom Ranch Veterans Foundation helps post-9/11 veterans step away from the noise, reconnect with purpose, and build what comes next through immersive retreats, professional coaching, and a lasting community of support.</p>
     <div class="actions">${btn('Get Support', '/veterans')}${btn('Support a Veteran', site.donateUrl, 'ghost')}</div>
   </div>
 </section>
@@ -57,12 +57,12 @@ ${section({
 })}
 
 ${section({
-  id: 'stories',
+  id: 'first-retreat',
   cls: 'ink',
-  eyebrow: 'Stories',
-  title: 'Every Veteran Has a Story. The Next Chapter Is Still Being Written.',
-  intro: `<p>Every veteran arrives at Freedom Ranch with different experiences, different goals, and a different vision for what comes next.</p><p>As our veterans complete Freedom Ranch retreats and continue through professional coaching, we will share their experiences and stories here in their own words.</p>`,
-  body: `<div class="videos">${videos.map(videoCard).join('')}</div><div class="actions">${btn('Watch Our Story', '/stories', 'primary')}</div>`,
+  eyebrow: 'Our First Retreat',
+  title: 'March 2027. Temecula, California.',
+  intro: `<p>Our first Freedom Ranch retreat is planned for March 2027 at Native Falls in Temecula, CA, for a small cohort of post-9/11 veterans within 18 months of transition.</p><p>Applications are open now.</p>`,
+  body: `<div class="actions">${btn('Apply for the First Retreat', '/apply', 'primary')}${btn('See How It Works', '/programs/how-it-works', 'ghost')}</div>`,
 })}
 
 ${section({
