@@ -10,7 +10,7 @@ export const site = {
   short: cfg.short,
   tagline: cfg.tagline,
   // Set SITE_URL at build time (netlify.toml) once the final domain is confirmed.
-  url: (process.env.SITE_URL || 'https://frvf.org').replace(/\/$/, ''),
+  url: (process.env.SITE_URL || process.env.URL || 'https://frvf.org').replace(/\/$/, ''),
   email: cfg.email,
   address: cfg.address,
   // Every Donate and Support a Veteran button points here.
