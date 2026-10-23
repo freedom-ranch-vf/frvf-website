@@ -62,10 +62,10 @@ export const nav = [
       ['Apply for a Retreat', '/apply'],
       ['Volunteer & Sponsor', '/get-involved'],
       ['Corporate Partners', '/partners'],
-      ['Events', '/events'],
       ['Freedom Shave Club', '/shave-club'],
     ],
   },
+  { label: 'Events', href: '/events' },
   { label: 'Resources & Newsroom', href: '/resources' },
   { label: 'Contact', href: '/contact' },
 ];

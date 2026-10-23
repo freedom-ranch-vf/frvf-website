@@ -236,7 +236,7 @@ function footer() {
       </div>
       ${col('About', [['About Freedom Ranch', '/about'], ...about])}
       ${col('Programs', nav[1].sub)}
-      ${col('Get Involved', [...nav[2].sub, ['Donate', site.donateUrl], ['Resources & Newsroom', '/resources']])}
+      ${col('Get Involved', [...nav[2].sub, ['Events', '/events'], ['Donate', site.donateUrl], ['Resources & Newsroom', '/resources']])}
       <div>
         <h3>Contact</h3>
         <ul>

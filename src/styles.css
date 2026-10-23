@@ -370,3 +370,22 @@ button.video-thumb:hover .play { transform: scale(1.08); }
 .event-card p { margin: 0 0 0.6rem; }
 .event-actions { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin: 0.9rem 0 0 !important; }
 @media (max-width: 520px) { .event-card { grid-template-columns: 1fr; } .event-date { width: 5rem; } }
+
+/* home: coming up */
+.event-rows { display: grid; gap: 0.8rem; margin: 1.6rem 0 0.4rem; max-width: 46rem; }
+.event-row { display: grid; grid-template-columns: 4.4rem 1fr; gap: 1.1rem; align-items: center; padding: 0.8rem 1rem; border: 1px solid rgba(243, 234, 215, 0.22); border-radius: 2px; color: var(--cream); text-decoration: none; }
+.event-row:hover { border-color: var(--brass-l); background: rgba(255, 255, 255, 0.05); color: var(--cream); }
+.event-row .event-date { background: var(--cream); color: var(--navy-deep); padding: 0.55rem 0.2rem; }
+.event-row .event-date .m { color: var(--clay); }
+.event-row-body { display: grid; gap: 0.15rem; }
+.event-row-body span { opacity: 0.8; font-size: 0.92rem; }
+.event-row, .event-row:visited { color: var(--cream) !important; }
+.event-row-body strong { color: var(--cream); }
+.event-row-body span { color: var(--sand); }
+@media (min-width: 900px) {
+  .primary-nav a { white-space: nowrap; }
+}
+@media (min-width: 900px) and (max-width: 1240px) {
+  .primary-nav a { letter-spacing: 0.08em; font-size: 0.72rem; }
+  .primary-nav { gap: 0.2rem; }
+}

@@ -1,5 +1,9 @@
 import { site } from '../data/site.mjs';
 import { articles, articleIntro, fmtDate } from '../data/articles.mjs';
+import { readCollection } from '../data/content.mjs';
+
+const todayIso = new Date().toISOString().slice(0, 10);
+const upcomingEvents = readCollection('events').filter((e) => (e.endDate || e.date) >= todayIso).sort((a, b) => (a.date > b.date ? 1 : -1)).slice(0, 3);
 import { btn, compassSvg, ctaBand, cards, section, eyebrow, portrait, supporters, findImg, tagline } from '../lib.mjs';
 
 const challenge = [
@@ -57,12 +61,17 @@ ${section({
 })}
 
 ${section({
-  id: 'first-retreat',
+  id: 'coming-up',
   cls: 'ink',
-  eyebrow: 'Our First Retreat',
-  title: 'March 2027. Temecula, California.',
-  intro: `<p>Our first Freedom Ranch retreat is planned for March 2027 at Native Falls in Temecula, CA, for a small cohort of post-9/11 veterans within 18 months of transition.</p><p>Applications are open now.</p>`,
-  body: `<div class="actions">${btn('Apply for the First Retreat', '/apply', 'primary')}${btn('See How It Works', '/programs/how-it-works', 'ghost')}</div>`,
+  eyebrow: 'Coming Up',
+  title: 'Our first retreat is March 2027.',
+  intro: `<p>Our first Freedom Ranch retreat is planned for March 2027 at Native Falls in Temecula, CA, for a small cohort of post-9/11 veterans within 18 months of transition. Applications are open now.</p>`,
+  body: `<div class="event-rows">${upcomingEvents.map((e) => {
+    const d = new Date(e.date + 'T12:00:00');
+    const m = e.display ? e.display.split(' ')[0].slice(0, 3) : d.toLocaleDateString('en-US', { month: 'short' });
+    const n = e.display ? d.getFullYear() : d.getDate();
+    return `<a class="event-row" href="${e.link && e.link.startsWith('/') ? e.link : '/events'}"><span class="event-date"><span class="m">${m}</span><span class="d">${n}</span></span><span class="event-row-body"><strong>${e.title}</strong><span>${e.location || ''}</span></span></a>`;
+  }).join('')}</div><div class="actions">${btn('Apply for the First Retreat', '/apply', 'primary')}${btn('See All Events', '/events', 'ghost')}</div>`,
 })}
 
 ${section({
