@@ -69,6 +69,7 @@ ${section({
   body: form({
     id: 'subscribe-form',
     endpoint: site.contactEndpoint,
+    zoho: { ...site.zoho, kind: 'subscribe' },
     subject: 'Subscribe me to Freedom Ranch updates',
     fields: field({ name: 'email', label: 'Email', type: 'email', required: true, autocomplete: 'email' }),
     submit: 'Subscribe for Updates',
@@ -95,6 +96,7 @@ ${section({
     <div>${form({
       id: 'contact-form',
       endpoint: site.contactEndpoint,
+      zoho: { ...site.zoho, kind: 'contact' },
       subject: 'Message from the Freedom Ranch website',
       fields: contactFields,
       submit: 'Send Message',

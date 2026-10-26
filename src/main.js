@@ -9,27 +9,41 @@
     var date = '';
     var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(d.separation_date || '');
     if (m) date = months[parseInt(m[2], 10) - 1] + ' ' + parseInt(m[3], 10) + ', ' + m[1];
-    var parts = (d.full_name || '').trim().split(/\s+/);
-    var last = parts.length > 1 ? parts.pop() : parts[0] || 'Unknown';
+    var kind = z.kind || 'apply';
+    var full = (d.full_name || d.name || '').trim();
+    var parts = full ? full.split(/\s+/) : [];
+    var last = parts.length > 1 ? parts.pop() : parts[0] || (kind === 'subscribe' ? 'Subscriber' : 'Unknown');
     var first = parts.join(' ');
-    var story = [
-      'City/State: ' + (d.city_state || ''),
-      'Age range: ' + (d.age_range || ''),
-      'Branch: ' + (d.branch || ''),
-      'Service status: ' + (d.service_status || ''),
-      'Rank group: ' + (d.rank_group || ''),
-      'Years served: ' + (d.years_served || ''),
-      'Transition: ' + (d.status || ''),
-      'Retreat format: ' + (d.retreat_format || ''),
-      'Hoping for: ' + (d.hoping_for || ''),
-      'Biggest concern: ' + (d.biggest_concern || '')
-    ].join('\n');
+    var story = '';
+    var heard = d.how_heard || '';
+    if (kind === 'apply') {
+      story = [
+        'City/State: ' + (d.city_state || ''),
+        'Age range: ' + (d.age_range || ''),
+        'Branch: ' + (d.branch || ''),
+        'Service status: ' + (d.service_status || ''),
+        'Rank group: ' + (d.rank_group || ''),
+        'Years served: ' + (d.years_served || ''),
+        'Transition: ' + (d.status || ''),
+        'Retreat format: ' + (d.retreat_format || ''),
+        'Hoping for: ' + (d.hoping_for || ''),
+        'Biggest concern: ' + (d.biggest_concern || '')
+      ].join('\n');
+    } else if (kind === 'contact') {
+      story = 'Topic: ' + (d.topic || '') + '\n\n' + (d.message || '');
+      heard = 'Website contact form';
+      branch = ''; date = '';
+    } else {
+      story = 'Subscribe to updates';
+      heard = 'Website subscribe form';
+      branch = ''; date = '';
+    }
+    var company = kind === 'apply' ? 'Individual (website application)' : kind === 'contact' ? 'Website contact' : 'Newsletter subscriber';
     var fields = {
       xnQsjsdp: z.xnQsjsdp, xmIwtLD: z.xmIwtLD, actionType: z.actionType, returnURL: z.returnURL,
-      'Company': 'Individual (website application)',
+      'Company': company,
       'Last Name': last, 'First Name': first, 'Email': d.email || '', 'Phone': d.phone || '',
-      'Lead Source': 'Website Apply Form',
-      LEADCF3: d.travel || '', LEADCF4: branch, LEADCF52: date, LEADCF2: story, LEADCF1: d.how_heard || ''
+      LEADCF3: kind === 'apply' ? (d.travel || '') : '', LEADCF4: branch, LEADCF52: date, LEADCF2: story, LEADCF1: heard
     };
     var name = 'zoho-frame-' + Date.now();
     var frame = document.createElement('iframe');
@@ -131,10 +145,19 @@
       var data = {};
       fd.forEach(function (v, k) { data[k] = v; });
 
-      // Copy the application into Zoho CRM (hidden form posted into an iframe, so the page never leaves).
+      // Zoho CRM web form (hidden form posted into an iframe, so the visitor never leaves the page).
       var zraw = form.getAttribute('data-zoho');
       if (zraw) {
-        try { sendToZoho(JSON.parse(zraw), data); } catch (err) { /* Netlify copy below is the backup */ }
+        try {
+          sendToZoho(JSON.parse(zraw), data);
+          status.className = 'form-status ok';
+          status.textContent = status.getAttribute('data-success');
+          form.reset();
+        } catch (err) {
+          status.className = 'form-status err';
+          status.textContent = 'Something went wrong. Please email ' + form.getAttribute('data-mailto') + ' and we will help you directly.';
+        }
+        return;
       }
 
       var endpoint = form.getAttribute('data-endpoint');

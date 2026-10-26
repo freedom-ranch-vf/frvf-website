@@ -87,4 +87,31 @@ fs.writeFileSync(
 // Vercel
 fs.writeFileSync(path.join(dist, 'vercel.json'), JSON.stringify({ cleanUrls: true, trailingSlash: false }, null, 2) + '\n');
 
+// Redirects from netlify.toml become small static redirect pages (works on any host, including GitHub Pages).
+const toml = fs.existsSync(path.join(root, 'netlify.toml')) ? fs.readFileSync(path.join(root, 'netlify.toml'), 'utf8') : '';
+for (const m of toml.matchAll(/\[\[redirects\]\]\s*from = "([^"]+)"\s*to = "([^"]+)"/g)) {
+  const [, from, to] = m;
+  if (from.includes('*') || from.endsWith('.html')) continue;
+  const out = path.join(dist, from, 'index.html');
+  if (fs.existsSync(out)) continue;
+  fs.mkdirSync(path.dirname(out), { recursive: true });
+  fs.writeFileSync(out, `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Redirecting</title><meta name="robots" content="noindex"><link rel="canonical" href="${to}"><meta http-equiv="refresh" content="0; url=${to}"></head><body><p>Redirecting to <a href="${to}">${to}</a>.</p><script>location.replace(${JSON.stringify(to)}+location.hash)</script></body></html>`);
+}
+
+// Optional BASE_PATH (for a project site such as https://org.github.io/repo/). Leave unset for a custom domain at the root.
+const base = (process.env.BASE_PATH || '').replace(/\/$/, '');
+if (base) {
+  const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(path.join(d, e.name)) : [path.join(d, e.name)]));
+  for (const f of walk(dist)) {
+    if (!/\.(html|css|js|xml|txt)$/.test(f)) continue;
+    let t = fs.readFileSync(f, 'utf8');
+    t = t
+      .replace(/(href|src|action|content)="\/(?!\/)/g, `$1="${base}/`)
+      .replace(/url\((['"]?)\/(?!\/)/g, `url($1${base}/`)
+      .replace(/location\.replace\("\//g, `location.replace("${base}/`);
+    if (f.endsWith('sitemap.xml')) t = t.replace(/<loc>(https?:\/\/[^/<]+)/g, `<loc>$1${base}`);
+    fs.writeFileSync(f, t);
+  }
+}
+
 console.log(`Built ${pages.length} pages into dist/`);
