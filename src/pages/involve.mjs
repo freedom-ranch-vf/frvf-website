@@ -86,6 +86,7 @@ export default [
             id: 'apply-form',
             endpoint: site.applyEndpoint,
             subject: 'Freedom Ranch retreat application',
+            zoho: site.zoho,
             fields: applyFields,
             submit: 'Submit Your Application',
             success: 'Thank you. Your application is in. Our team will follow up with next steps.',

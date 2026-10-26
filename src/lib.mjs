@@ -167,9 +167,9 @@ export function field({ name, label, type = 'text', required = false, options = 
 
 export const formGroup = (title, hint = '') => `<div class="form-group"><h3>${title}</h3>${hint ? `<p class="hint">${hint}</p>` : ''}</div>`;
 
-export function form({ id, endpoint, subject, fields, submit, success }) {
+export function form({ id, endpoint, subject, fields, submit, success, zoho = null }) {
   const nl = endpoint ? '' : ` name="${esc(id)}" method="POST" data-netlify="true" netlify-honeypot="company"`;
-  return `<form class="form" id="${id}"${nl} data-endpoint="${esc(endpoint)}" data-mailto="${esc(site.email)}" data-subject="${esc(subject)}" novalidate>
+  return `<form class="form" id="${id}"${nl} data-endpoint="${esc(endpoint)}" data-mailto="${esc(site.email)}" data-subject="${esc(subject)}"${zoho ? ` data-zoho="${esc(JSON.stringify(zoho))}"` : ''} novalidate>
   ${endpoint ? '' : `<input type="hidden" name="form-name" value="${esc(id)}"><input type="hidden" name="subject" value="${esc(subject)} (frvf.org)">`}
   ${fields}
   <div class="hp" aria-hidden="true"><label>Leave this empty<input name="company" tabindex="-1" autocomplete="off"></label></div>
@@ -199,7 +199,7 @@ function header() {
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
     <nav id="primary-nav" class="primary-nav" aria-label="Primary">
       <ul>${items}</ul>
-      ${btn('Donate', site.donateUrl, 'primary')}
+      <div class="nav-cta">${btn('Apply', '/apply', 'ghost')}${btn('Donate', site.donateUrl, 'primary')}</div>
     </nav>
   </div>
 </header>`;

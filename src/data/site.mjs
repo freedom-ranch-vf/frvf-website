@@ -20,6 +20,13 @@ export const site = {
   crisisText: cfg.crisisText,
   social: cfg.social || {},
   // Forms use Netlify Forms by default. These optional env vars send them to a webhook instead.
+  zoho: {
+    action: 'https://crm.zoho.com/crm/WebToLeadForm',
+    xnQsjsdp: 'ba09501c7340812336b3b0565b304f268fb99951b77e0b5e48e3cc6a70ef7015',
+    xmIwtLD: '3ddf6f869192d3afdc21d11d925250f27fccad5b38465e5d7d39b2a06464bf96c64d2a877b010ae2c9609c039ae9337c',
+    actionType: 'TGVhZHM=',
+    returnURL: 'https://frvf.org/apply?sent=1',
+  },
   applyEndpoint: process.env.FRVF_APPLY_ENDPOINT || '',
   contactEndpoint: process.env.FRVF_CONTACT_ENDPOINT || '',
   applyEmbed: process.env.FRVF_APPLY_EMBED || '',
